@@ -9,31 +9,19 @@ The purpose of this tutorial is to introduce the programming languages R and Pyt
 
 Both parts have the same structure: each chapter of the R part has a counterpart in the Python part that covers the same topics with the same examples and exercises. So you can work through the part of your preferred language, or compare how the same task is done in both languages.
 
-### Some additional references and tutorials for R {-}
-
--   The online textbook [Introduction to Econometrics with R](https://www.econometrics-with-r.org/) 
--   [Reference card for R commands](https://cran.r-project.org/doc/contrib/refcard.pdf)  
--   [The official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)   
--   [www.r-project.org](https://www.r-project.org/other-docs.html)  
--   An R-package for learning R: [www.swirl.com](https://swirlstats.com/)   
--   A book project which covers also advanced issues such as "writing performant code" and "package development": [adv-r.had.co.nz](http://adv-r.had.co.nz/)    
--   Another excellent book: [R for Data Science](https://r4ds.had.co.nz/)    
--  [Creating dynamic graphics](https://gganimate.com/)  
--   [An introduction to statistical learning with R](https://www.statlearning.com/)   
-
-### Some additional references and tutorials for Python {-}
-
--   [The official Python tutorial](https://docs.python.org/3/tutorial/)  
--   The online lectures [Python Programming for Economics and Finance](https://python-programming.quantecon.org/) by QuantEcon  
--   [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney, the creator of pandas  
--   [NumPy for MATLAB users](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html)  
--   [Comparison of pandas with R](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)  
--   [An introduction to statistical learning with Python](https://www.statlearning.com/)   
 
 
-### LLMs {-}
+### Downloads 
 
-Of course, you can also ask large language models (LLMs) such as [ChatGPT](https://openai.com/chatgpt/) or [Claude](https://claude.com/). **But:** Don't fool yourself! Getting an answer from an LLM is usually not the same as learning and understanding.
+-    R is free of charge and can be downloaded from [https://cran.r-project.org/](https://cran.r-project.org/) 
+-    Python is free of charge and can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/) 
+-    The IDE Positron for R and Python is also free of charge and can be downloaded from  
+     [https://positron.posit.co/download.html](https://positron.posit.co/download.html) 
+
+
+### On using LLMs {-}
+
+Of course, you can also ask large language models (LLMs) such as [ChatGPT](https://openai.com/chatgpt/) or [Claude](https://claude.com/). **But:** Don't fool yourself! Getting an answer from an LLM is not the same as learning and understanding.
 
 
 ### Why do we use R and Python? {-}
@@ -47,6 +35,31 @@ Of course, you can also ask large language models (LLMs) such as [ChatGPT](https
       - [Publication ready plots](https://rpkgs.datanovia.com/ggpubr/index.html) 
 -  Today, R is the de-facto standard for statistical science.
 -  Python is one of the most popular programming languages overall and the de-facto standard for machine learning and data science.
+
+
+
+### Some additional references and tutorials for R {-}
+
+-   The online textbook [Introduction to Econometrics with R](https://www.econometrics-with-r.org/) 
+-   [Reference card for R commands](https://cran.r-project.org/doc/contrib/refcard.pdf)  
+-   [The official introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)   
+-   [www.r-project.org](https://www.r-project.org/other-docs.html)  
+-   An R-package for learning R: [www.swirl.com](https://swirlstats.com/)   
+-   A book project which covers also advanced issues such as "writing performant code" and "package development": [adv-r.had.co.nz](http://adv-r.had.co.nz/)    
+-   Another excellent book: [R for Data Science](https://r4ds.had.co.nz/)    
+-  [Creating dynamic graphics](https://gganimate.com/)  
+-   [An introduction to statistical learning with R](https://www.statlearning.com/)   
+
+
+### Some additional references and tutorials for Python {-}
+
+-   [The official Python tutorial](https://docs.python.org/3/tutorial/)  
+-   The online lectures [Python Programming for Economics and Finance](https://python-programming.quantecon.org/) by QuantEcon  
+-   [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney, the creator of pandas  
+-   [NumPy for MATLAB users](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html)  
+-   [Comparison of pandas with R](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)  
+-   [An introduction to statistical learning with Python](https://www.statlearning.com/)   
+
 
 
 
