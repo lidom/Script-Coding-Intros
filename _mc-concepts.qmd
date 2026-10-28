@@ -1,17 +1,453 @@
-## Some important concepts 
+<!-- LTeX: language=en-US -->
+## Some Important Concepts
 
-We will spend a lot of time learning about statistical properties of estimators. To be precise, let $\hat{\theta}_n$ be an estimator of a parameter $\theta$. The estimator is a functions of the sample, say $\{X_1, X_2, \ldots, X_n\}$. The sample consists of random variables and any function of the sample, including $\hat{\theta}_n$, is a random variable as well. That is, for different realizations of the data, we get different realizations of the estimator. 
+### Random Sample
 
-These arguments can be confusing because in practice we typically only have one data set and therefore only one realization of the estimator. But we could also think of all the other realizations of the data we could have obtained. For example, consider your starting salary after graduation. Let $\theta$ be the expected starting salary, which is a fixed number that we do not know. After everyone started working and we see your actual starting salaries, we can calculate the sample average as an estimate of the expected value, but this estimate is just one potential realization. If things had turned out slightly different, your starting salaries might have been different and we would have seen a different realization of the estimator. 
+Let 
+$$
+\{X_1, X_2, \ldots, X_n\}
+$$
+denote the so-called **(i.i.d.) random sample**. The random sample is a collection of $n$ random variables, where all random variables have the same distribution $F_X$
+$$
+X_i\sim F_X\quad\text{for all}\quad i=1,\dots,n
+$$
+and where all random variables are independent of each other 
+$$
+X_i \independent X_j \quad \text{for all} \quad i \neq j.
+$$
 
-Since an estimator is a  random variable, it has a distribution and (typically) a mean and a variance. We call an estimator unbiased if
-$$E\left(\hat{\theta}_n\right) = \theta$$
-That is, the average value of the estimator over all the hypothetical data sets we could have obtained is equal to $\theta$. Unbiasedness can hold for any sample size $n$ and is therefore called a small-sample property. Unbiasedness does not imply that $\hat{\theta}_n$ is necessarily close to $\theta$. 
+* The sign $\independent$ means **independent of each other.**
+* The abbreviation **i.i.d.** stands for independent and identically distributed.
 
-We will define what it means for an estimator to be consistent:
-$$\hat{\theta}_n \rightarrow_P  \theta$$
+:::: {.callout-note style="minimal"}
+## Examples: $F_X$ and Parameters of Interest $\theta$
+
+::: {.spaced-list}
+1. **Normal distribution:** $F_X = \mathcal{N}(\mu_X, \sigma_X^2)$
+   * $\theta = E(X) = \mu_X$, or
+   * $\theta = \operatorname{Var}(X) = \sigma^2_X$
+
+2. **Chi-squared distribution:** $F_X = \chi^2_{\operatorname{df}}$
+   * $\theta = E(X) = \operatorname{df}$, or
+   * $\theta = \operatorname{Var}(X) = 2\cdot \operatorname{df}$
+
+3. **A distribution without a name:** $F_X$ is some unnamed distribution (most distributions have no name)
+   * $\theta = E(X)$, or
+   * $\theta = \operatorname{Median}(X)$, or
+   * $\theta = p\text{-Quantile}(X)$
+
+4. **A multivariate distribution:** $F_{YX}$ is the joint distribution of $(Y, X^\top) \in \mathbb{R}^{K+1}$
+   * $\theta = \beta$, the coefficient vector of the regression model $Y_i = X_i^\top\beta + \varepsilon_i$
+:::
+::::
+
+
+### Estimator 
+
+
+To estimate the unknown parameter value $\theta$ we make use of an estimator which is simply a function of the random sample, 
+$$
+\hat{\theta}_n\equiv \hat{\theta}(X_1, X_2, \ldots, X_n).
+$$
+
+Since estimators are defined as functions of random variables, they are themself random variables. 
+
+🔊 Estimators are Random Variables❗
+
+Thus, to fully understand an estimator, we need to know its **statistical properties** of the estimator (i.e., its distribution or, at least its mean and its variance). 
+
+Observed data are just one **obs**erved realization of the random variables in the random sample
+$$
+\{X_{1,\operatorname{obs}}, X_{2,\operatorname{obs}}, \ldots, X_{n,\operatorname{obs}}\}.
+$$ 
+Each such observed realization of the random sample yields a specific realization of the random estimator $\hat{\theta}_n$
+$$
+\hat{\theta}_{n,\operatorname{obs}}\equiv \hat{\theta}(X_{1,\operatorname{obs}}, X_{2,\operatorname{obs}}, \ldots, X_{n,\operatorname{obs}}).
+$$
+
+
+These arguments can be confusing because in practice we typically only have one data set (one realization of the random sample) and therefore only one realization of the estimator. But we could also think of all the other realizations of the data we could have obtained. 
+
+
+<!-- For example, consider your starting salaries after graduation. Let $\theta$ be the **expected starting salary**, which is a fixed number that we do not know. After everyone started working, and we see your actual starting salaries, we can calculate the sample average as an estimate of the expected value. But this estimate is just one possible realization out of infinitely many others. If we had asked a different cohort of former students, we would have received similar, but different starting salaries. That is, we would have seen a different realization of the (sample average) estimator.  -->
+
+
+The following examples illustrate different types of random samples and estimators:
+
+
+::: {.callout-note collapse="true"}
+## Example: Estimating the Mean from an i.i.d. Random Sample
+
+Let
+$$
+\{X_1, \ldots, X_n\}
+$$
+be an i.i.d. random sample with $X_i \sim F_X$ for all $i = 1, \dots, n$.
+
+::: {.callout-tip icon=false}
+## 🤫 Psst … Secret Information
+
+In this simulation, $F_X = \mathcal{N}(\mu_X, \sigma^2_X)$ with $\mu_X = 5$ and $\sigma^2_X = 10$. In practice, $F_X$, and thus $\mu_X$ and $\sigma^2_X$, are **unknown**.
+:::
+
+We estimate the unknown mean $\theta \equiv \mu_X$ by the **sample mean**
+$$
+\hat\theta_n \equiv \hat\mu_n = \frac{1}{n}\sum_{i=1}^n X_i.
+$$
+
+The following code generates one realization of the random sample. The fixed seed, `set.seed(321)`, makes the pseudo-random numbers reproducible.
+
+```{r}
+#| echo: true
+set.seed(321)
+
+mean_X <- 5
+var_X  <- 10
+n      <- 10
+
+sample_X <- rnorm(n = n, mean = mean_X, sd = sqrt(var_X))
+```
+
+The observed realization, stored in `sample_X`,
+$$
+\{X_{1,\operatorname{obs}}, \ldots, X_{n,\operatorname{obs}}\} = \{`r round(sample_X[1], 2)`,\ `r round(sample_X[2], 2)`,\ \dots,\ `r round(sample_X[n], 2)`\}
+$$
+yields the estimate
+$$
+\hat{\theta}_{n,\operatorname{obs}} = \frac{1}{n}\sum_{i=1}^n X_{i,\operatorname{obs}} = `r round(mean(sample_X), 2)`.
+$$
+
+A new sample yields a new estimate. The animation shows the observed sample (first frame, red) followed by further realizations of the random sample and of the estimator $\hat\theta_n$ (blue).
+
+```{r}
+#| echo: false
+#| fig-width: 7
+#| fig-height: 4.5
+#| fig-retina: 1
+#| fig.keep: !expr if (knitr::is_html_output()) "all" else "first"
+#| animation.hook: !expr if (knitr::is_html_output()) "gifski" else NULL
+#| interval: 1
+R        <- 20                             # number of realizations
+X_sample <- cbind(sample_X,                # first column: observed sample
+                  matrix(rnorm(n * (R - 1), mean = mean_X, sd = sqrt(var_X)),
+                         nrow = n))
+
+for (r in seq_len(R)) {
+  col_r <- if (r == 1) "darkred" else "steelblue"
+  par(mgp = c(2.2, 0.7, 0), las = 1, family = "serif", mar = c(4, 4, 3, 1))
+  plot(NA, xlim = c(0.5, n + 0.5), ylim = mean_X + c(-4, 4) * sqrt(var_X),
+       xlab = "Observation i", ylab = expression(X[i]), xaxt = "n",
+       main = if (r == 1) "Observed realization of the random sample"
+              else paste0("Another realization (", r, " of ", R, ")"))
+  axis(1, at = seq_len(n))
+  abline(h = mean_X, lty = 2, lwd = 1.5)
+  abline(h = mean(X_sample[, r]), lwd = 2, col = col_r)
+  points(seq_len(n), X_sample[, r], pch = 19, cex = 2, col = col_r)
+  legend("topleft", bty = "n", lty = c(2, 1), lwd = c(1.5, 2),
+         col = c(par("fg"), col_r), cex = 0.9,
+         legend = c(bquote("true mean" ~ theta == .(mean_X)),
+                    bquote("estimate" ~ hat(theta)[n] ==
+                           .(format(round(mean(X_sample[, r]), 2), nsmall = 2)))))
+}
+```
+
+**Summary:**
+
+::: {.spaced-list}
+* The data change from realization to realization, and so does the estimate. That is, $\hat\theta_n$ is a **random variable**, and $\hat{\theta}_{n,\operatorname{obs}}$ is just one of its realizations.
+
+* The realizations of $\hat\theta_n$ lie close to the (usually unknown) true mean $\mu_X = 5$. That is, the distribution of $\hat\theta_n$ is **concentrated** around $\mu_X$. This concentration increases with the sample size $n$.
+:::
+:::
+
+
+
+::: {.callout-note collapse="true"}
+## Example: Estimating Regression Coefficients from an i.i.d. Random Sample
+
+Let
+$$
+\{(Y_1, X_1^\top), \ldots, (Y_n, X_n^\top)\}
+$$
+be an i.i.d. random sample with $(Y_i, X_i^\top) \sim F_{YX}$ for all $i = 1, \dots, n$, where
+
+::: {.spaced-list}
+* $Y_i = X_i^\top \beta + \varepsilon_i$ is the outcome, and
+
+* $X_i \in \mathbb{R}^K$ is the vector of predictors of observation $i$.
+:::
+
+::: {.callout-tip icon=false}
+## 🤫 Psst … Secret Information
+
+In this simulation, $X_i = (1, X_{i2})^\top$ with $X_{i2} \sim \mathcal{U}[0, 4]$, $\varepsilon_i \sim \mathcal{N}(0, 1)$ independent of $X_i$, and $\beta = (2, -1)^\top$. Together, these choices fully specify the joint distribution $F_{YX}$.
+
+In practice, we assume (hopefully correctly) that we know the type of regression model, here the simple linear regression model
+$$
+Y_i = X_i^\top \beta + \varepsilon_i \quad\text{with}\quad X_i = (1, X_{i2})^\top.
+$$
+
+However, we do not heroically assume that we know the entire model, only its structure (here: an intercept and one predictor). In particular, we typically do **not know:** 
+
+::: {.spaced-list}
+* the distribution of $X_i$,
+
+* the distribution of $\varepsilon_i$, and
+
+* the value of $\beta$.
+:::
+
+Thus, essential parts of $F_{YX}$, such as $\beta$, are **unknown**.
+:::
+
+We estimate the unknown coefficient vector $\theta \equiv \beta$ by the **OLS estimator**
+$$
+\hat\theta_n \equiv \hat\beta_n = \left(X^\top X\right)^{-1} X^\top Y,
+$$
+where
+$$
+X = \begin{pmatrix}
+X_1^\top \\ X_2^\top \\ \vdots \\ X_n^\top
+\end{pmatrix}
+= \begin{pmatrix}
+X_{11} & X_{12} & \cdots & X_{1K} \\
+X_{21} & X_{22} & \cdots & X_{2K} \\
+\vdots & \vdots & \ddots & \vdots \\
+X_{n1} & X_{n2} & \cdots & X_{nK}
+\end{pmatrix}
+\quad\text{and}\quad
+Y = \begin{pmatrix}
+Y_1 \\ Y_2 \\ \vdots \\ Y_n
+\end{pmatrix}
+$$
+are the $n \times K$ matrix of predictors and the $n \times 1$ vector of outcomes.
+
+The following code generates one realization of the random sample and computes the estimate.
+
+```{r}
+#| echo: true
+set.seed(321)
+
+n    <- 20
+beta <- c(2, -1)
+
+X   <- cbind(1, runif(n, min = 0, max = 4))   # first column: intercept
+eps <- rnorm(n, mean = 0, sd = 1)
+Y   <- X %*% beta + eps
+
+beta_hat <- solve(t(X) %*% X) %*% t(X) %*% Y
+```
+
+The observed realization, stored in `Y` and `X`,
+$$
+\{(Y_{1,\operatorname{obs}}, X_{1,\operatorname{obs}}^\top), \ldots, (Y_{n,\operatorname{obs}}, X_{n,\operatorname{obs}}^\top)\} = \{(`r round(Y[1], 2)`,\ 1,\ `r round(X[1, 2], 2)`),\ \dots,\ (`r round(Y[n], 2)`,\ 1,\ `r round(X[n, 2], 2)`)\}
+$$
+yields the estimate, stored in `beta_hat`,
+$$
+\hat{\theta}_{n,\operatorname{obs}} = (`r round(beta_hat[1], 2)`,\ `r round(beta_hat[2], 2)`)^\top.
+$$
+
+A new sample yields a new estimate. The animation shows the observed sample (first frame, red) followed by further realizations of the random sample and of the estimator $\hat\theta_n$ (blue).
+
+```{r}
+#| echo: false
+#| fig-width: 7
+#| fig-height: 4.5
+#| fig-retina: 1
+#| fig.keep: !expr if (knitr::is_html_output()) "all" else "first"
+#| animation.hook: !expr if (knitr::is_html_output()) "gifski" else NULL
+#| interval: 1
+R <- 20                                    # number of realizations
+
+for (r in seq_len(R)) {
+  if (r > 1) {                             # r = 1: observed sample
+    X <- cbind(1, runif(n, min = 0, max = 4))
+    Y <- X %*% beta + rnorm(n, mean = 0, sd = 1)
+  }
+  b_r   <- solve(t(X) %*% X) %*% t(X) %*% Y
+  col_r <- if (r == 1) "darkred" else "steelblue"
+  par(mgp = c(2.2, 0.7, 0), las = 1, family = "serif", mar = c(4, 4, 3, 1))
+  plot(NA, xlim = c(0, 4), ylim = c(-5, 5),
+       xlab = expression(X[i2]), ylab = expression(Y[i]),
+       main = if (r == 1) "Observed realization of the random sample"
+              else paste0("Another realization (", r, " of ", R, ")"))
+  abline(a = beta[1], b = beta[2], lty = 2, lwd = 1.5)
+  abline(a = b_r[1], b = b_r[2], lwd = 2, col = col_r)
+  points(X[, 2], Y, pch = 19, cex = 1.5, col = col_r)
+  legend("topright", bty = "n", lty = c(2, 1), lwd = c(1.5, 2),
+         col = c(par("fg"), col_r), cex = 0.9,
+         legend = c(bquote("true line:" ~ beta == group("(", list(.(beta[1]), .(beta[2])), ")")),
+                    bquote("estimate:" ~ hat(beta)[n] ==
+                           group("(", list(.(format(round(b_r[1], 2), nsmall = 2)),
+                                           .(format(round(b_r[2], 2), nsmall = 2))), ")"))))
+}
+```
+
+**Summary:**
+
+::: {.spaced-list}
+* The data change from realization to realization, and so does the estimate. That is, $\hat\theta_n$ is a **random vector**, and $\hat{\theta}_{n,\operatorname{obs}}$ is just one of its realizations.
+
+* The estimated regression lines lie close to the (usually unknown) true line with $\beta = (2, -1)^\top$. That is, the distribution of $\hat\theta_n$ is **concentrated** around $\beta$. This concentration increases with the sample size $n$.
+:::
+:::
+
+
+<!-- 
+::: {.callout-note collapse="true"}
+## Example: Time-Series Samples
+
+In many time-series applications, such as weather forecasting, the independence assumption across $i = 1, \dots, n$ is unrealistic. In such cases, we need to allow for temporal dependence across the random variables $X_1, X_2, \dots$ in the sample. We will **not** consider time-series data in these notes.
+
+```{r}
+#| echo: true
+#| eval: false
+n   <- 120   # number of time points
+rho <- 0.8   # autocorrelation
+
+X    <- numeric(n)
+X[1] <- rnorm(1)
+
+for (t in 2:n) {
+  X[t] <- rho * X[t - 1] + rnorm(1)
+}
+
+sample <- X
+```
+:::
+-->
+
+
+### Consistency, Bias, and Variance of Estimators
+
+Since an estimator is a random variable, it has a distribution and (typically) a mean and a variance. 
+
+We call an estimator **unbiased** if
+$$
+E\left(\hat{\theta}_n\right) = \theta.
+$$
+
+That is, the average value of the estimator over *all* the hypothetical data sets we could have obtained is equal to $\theta$. 
+
+Unbiasedness can hold for any sample size $n$ and is therefore called a small-sample property. There are, however, estimators that are biased in small samples, i.e.
+$$
+E\left(\hat{\theta}_n\right) \neq \theta\quad\text{for a fix sample size}\quad n.
+$$
+For such estimators, we want them to be at least **asymptotically unbiased,** i.e.
+$$
+E\left(\hat{\theta}_n\right) \to \theta\quad\text{as}\quad n\to\infty.
+$$
+
+Unbiasedness as well as asymptotic unbiasedness does not imply that the realizations of $\hat{\theta}_n$ are necessarily close to $\theta.$ 
+
+Indeed, the estimator may have a large variance 
+$$
+\operatorname{Var}(\hat\theta_n)=E\left(\left(\hat\theta_n - E(\hat\theta_n)\right)^2\right)=\text{large}
+$$
+thus the deviations of $\hat{\theta}_n$ from its mean may be large, even in large samples $(n\to\infty).$ 
+
+
+Therefore, besides (asymptotic) unbiasedness, we want estimators to be **consistent.** 
+
+::: {.callout icon=false}
+##
+::: {#def-consistency}
+## Consistency of $\hat\theta_n$
+
+An estimator $\hat\theta_n$ is called **(weakly) consistent** if, for any (arbitrarily small) $\varepsilon > 0$,
+\begin{align*}
+&P\left(\left|\hat{\theta}_n - \theta\right| > \varepsilon\right) \rightarrow 0 \quad\text{as}\quad n \to \infty\\[2ex]
+\Leftrightarrow\quad &P\left(\left|\hat{\theta}_n - \theta\right| \leq \varepsilon\right) \rightarrow 1 \quad\text{as}\quad n \to \infty.
+\end{align*}
+
+In short, we write
+$$
+\hat{\theta}_n \rightarrow_P \theta \quad\text{as}\quad n \to \infty
+$$
+or
+$$
+\left|\hat{\theta}_n - \theta\right| \rightarrow_P 0 \quad\text{as}\quad n \to \infty.
+$$
+:::
+:::
+
+That is, the realizations of a consistent estimator $\hat{\theta}_n$ concentrate around the true parameter value $\theta$ for large sample sizes $(n \to\infty).$ 
+
+::: {.callout-tip}
+## 🤓 Nerd's Box: A Sufficient Condition for Consistency
+
+An estimator $\hat\theta_n$ that is asymptotically unbiased and whose variance vanishes, i.e.,
+$$
+E\left(\hat\theta_n\right) \to \theta \quad\text{and}\quad \operatorname{Var}\left(\hat\theta_n\right) \to 0 \quad\text{as}\quad n \to \infty,
+$$
+is (weakly) consistent.
+
+**Proof.** We use **Chebyshev's inequality**: For any random variable $Z$ with finite variance and any $c > 0$,
+$$
+P\left(\left|Z - E(Z)\right| > c\right) \leq \frac{\operatorname{Var}(Z)}{c^2}.
+$$
+
+Let $\varepsilon > 0$. By the triangle inequality,
+$$
+\left|\hat\theta_n - \theta\right| \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \left|E\left(\hat\theta_n\right) - \theta\right|.
+$$
+Since $E(\hat\theta_n) \to \theta$, there is an $n_0$ such that $|E(\hat\theta_n) - \theta| \leq \varepsilon/2$ for all $n \geq n_0$. For these $n$, the event $|\hat\theta_n - \theta| > \varepsilon$ implies the event $|\hat\theta_n - E(\hat\theta_n)| > \varepsilon/2$. Thus, Chebyshev's inequality with $Z = \hat\theta_n$ and $c = \varepsilon/2$ yields
+$$
+P\left(\left|\hat\theta_n - \theta\right| > \varepsilon\right)
+\leq P\left(\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| > \frac{\varepsilon}{2}\right)
+\leq \frac{4 \operatorname{Var}\left(\hat\theta_n\right)}{\varepsilon^2}
+\to 0 \quad\text{as}\quad n \to \infty.
+$$
+Since $\varepsilon > 0$ was arbitrary, $\hat\theta_n \rightarrow_P \theta$. $\square$
+:::
+
+
+(Asymptotic) unbiasedness and consistency are the two minimum quality requirements we want any estimator to have. 
+
+But, for doing statistical hypothesis testing and for constructing confidence intervals, we actually need more: we need to know the **distribution** of the estimator $\hat\theta_n,$ at least for large sample sizes $(n \to\infty).$
+
+**Problem:** Generally, the distribution of 
+$$
+\hat\theta_n = \hat\theta(X_1, X_2, \ldots, X_n),
+$$
+depends on the distribution of the random variables in the random sample
+$$
+\{X_1, X_2, \ldots, X_n\};
+$$
+however, we typically do not know this distribution. 
+
+Luckily, we can make use of the **Central Limit Theorem**
+$$
+\sqrt{n}\left(\hat{\theta}_n  - \theta \right) \rightarrow_D N\left(0,\operatorname{AVar}\left(\hat{\theta}_n\right)\right),
+$$
+where (using that $\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)$)
+\begin{align*}
+\operatorname{AVar}\left(\hat{\theta}_n\right)
+&=\lim_{n\to\infty}\operatorname{Var}\left(\sqrt{n}\left(\hat{\theta}_n  - \theta \right)\right)\\[2ex]
+&=\lim_{n\to\infty}\left(\sqrt{n}\right)^2\operatorname{Var}\left(\hat{\theta}_n  - \theta\right)\\[2ex]
+&=\lim_{n\to\infty}n\operatorname{Var}\left(\hat{\theta}_n \right) 
+\end{align*}
+is called the **asymptotic** $(n\to\infty)$ variance of $\hat{\theta}_n.$ 
+
+Note that the definition of the asymptotic variance requires an appropriate scaling by $n,$ since the variance of any consistent estimator $\hat\theta_n$ degenerates to zero in large sample $(n\to\infty).$
+
+The central limit theorem assures that the distribution of the appropriately centered (by $\theta$) and scaled (by $\sqrt{n}$) estimator $\hat{\theta}_n$ tends become a normal distribution in large sample sizes $(n\to\infty).$ 
+
+**Take Away Message:** If the Central Limit Theorem is applicable, we know that 
+$$
+\sqrt{n}\left(\hat{\theta}_n  - \theta \right) \rightarrow_D N\left(0,\operatorname{AVar}\left(\hat{\theta}_n\right)\right),
+$$
+
+1. For any **consistent** estimator $\hat\theta_n,$ the distribution will degenerate to the point-value $\theta$ as $n\to\infty.$ 
+
+
+
+
+
+
 and asymptotically normally distributed:
-$$\sqrt{n}\left(\hat{\theta}_n  - \theta \right) \rightarrow_D N(0,V_{\theta}^2) $$
+
+
 These properties only hold in the limit and are called large-sample properties. Knowing the large-sample distribution is particularly useful because it allows us to test hypotheses and obtain confidence intervals. For example, let $\hat{V}_{\theta}$ be a consistent estimator of $V_{\theta}$. Then 
 $$P\left( \theta \in \left[ \hat{\theta}_n - 1.96\frac{\hat{V}_{\theta}}{\sqrt{n}} , \, \hat{\theta}_n + 1.96\frac{\hat{V}_{\theta}}{\sqrt{n}} \right] \right) \rightarrow 0.95$$
 and the interval 
@@ -25,7 +461,7 @@ could be much smaller than $95\%$. This actual coverage probability is unknown i
 The goal of Monte Carlo simulations is typically to investigate small sample properties of estimators, such as the actual coverage probability of confidence intervals for fixed $n$. To do so, we can simulate many random samples from an underlying distribution and obtain the realization of the estimator for each sample. We can then use the realizations to approximate the actual small sample distribution of the estimator and check properties, such as coverage probabilities of confidence intervals. Of course, the properties of the estimator depend on which underlying distribution we sample from. 
 
 
-## Simple simulation example
+## Simple Simulation Example
 
 
 As a simple example, let $\{X_1, X_2, \ldots, X_n\}$ be a random sample from some distribution $F_X$. Define $\theta = E(X)$ and let

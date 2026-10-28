@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15&nbsp; Regression analysis – Coding Intros</title>
+<title>15&nbsp; jupyter: python3 – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,6 +104,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -149,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-07-Regression.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-07-Regression.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -199,19 +213,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -229,19 +243,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -258,49 +272,49 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -315,18 +329,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basic-linear-model" id="toc-basic-linear-model" class="nav-link active" data-scroll-target="#basic-linear-model"><span class="header-section-number">15.1</span> Basic linear model</a></li>
-  <li><a href="#empirical-example" id="toc-empirical-example" class="nav-link" data-scroll-target="#empirical-example"><span class="header-section-number">15.2</span> Empirical example</a></li>
-  <li><a href="#exercises-vii" id="toc-exercises-vii" class="nav-link" data-scroll-target="#exercises-vii"><span class="header-section-number">15.3</span> Exercises VII</a></li>
+  <li><a href="#regression-analysis" id="toc-regression-analysis" class="nav-link active" data-scroll-target="#regression-analysis"><span class="header-section-number">16</span> Regression Analysis</a>
+  <ul class="collapse">
+  <li><a href="#basic-linear-model" id="toc-basic-linear-model" class="nav-link" data-scroll-target="#basic-linear-model"><span class="header-section-number">16.1</span> Basic Linear Model</a></li>
+  <li><a href="#empirical-example" id="toc-empirical-example" class="nav-link" data-scroll-target="#empirical-example"><span class="header-section-number">16.2</span> Empirical Example</a></li>
+  <li><a href="#exercises-vii" id="toc-exercises-vii" class="nav-link" data-scroll-target="#exercises-vii"><span class="header-section-number">16.3</span> Exercises VII</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-07-Regression.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-07-Regression.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">jupyter: python3</span></h1>
 </div>
 
 
@@ -343,15 +360,20 @@ window.Quarto = {
 </header>
 
 
-<section id="basic-linear-model" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="basic-linear-model"><span class="header-section-number">15.1</span> Basic linear model</h2>
+<!-- LTeX: language=en-US -->
+<hr>
+<section id="regression-analysis" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Regression Analysis</h1>
+<!-- LTeX: language=en-US -->
+<section id="basic-linear-model" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="basic-linear-model"><span class="header-section-number">16.1</span> Basic Linear Model</h2>
 <p>You have probably all learnt about the linear regression model in a previous econometrics class where <span class="math display">\[Y =  \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_{k} X_{k} + \beta_{k+1} + e \]</span> and <span class="math display">\[E(e \mid X_1, X_2, \ldots, X_{k}) = 0.\]</span> That is, the conditional mean of the outcome variable <span class="math inline">\(Y\)</span> is a linear function of the regressors <span class="math inline">\(X_1, X_2, \ldots, X_{k}\)</span>.</p>
 <p>When we have a random sample of size <span class="math inline">\(n\)</span>, we can also write <span class="math display">\[Y_i = \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_k X_{ik} + \beta_{k+1} +  e_i, \qquad i = 1, 2, \ldots, n.\]</span> Our goal is to estimate the coefficients <span class="math inline">\(\beta_1, \ldots, \beta_{k+1}\)</span> using the data <span class="math inline">\(\{Y_i, X_{i1},X_{i2},\ldots, X_{ik}\}^n_{i=1}\)</span>.</p>
 </section>
-<section id="empirical-example" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="empirical-example"><span class="header-section-number">15.2</span> Empirical example</h2>
+<section id="empirical-example" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="empirical-example"><span class="header-section-number">16.2</span> Empirical Example</h2>
 <p>We will now see how to run regressions in Python using the movie data set and the package <strong>statsmodels</strong>. Again, you can load the data using</p>
-<div id="d497a5c7" class="cell" data-execution_count="1">
+<div id="4b1d90aa" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -360,7 +382,7 @@ window.Quarto = {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data_set <span class="op">=</span> pd.read_csv(<span class="st">"tmdb_5000_movies.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Suppose we are interested in studying how the budget of a movie is related to its revenue and we model the relationship as: <span class="math display">\[revenue_i = \beta_1 budget_{i} +  \beta_2 + e_i\]</span> Before we run a regression, let’s look at a scatter plot of the relevant variables:</p>
-<div id="07d0885e" class="cell" data-execution_count="2">
+<div id="f736e1b6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(data_set[<span class="st">"budget"</span>], data_set[<span class="st">"revenue"</span>], facecolors <span class="op">=</span> <span class="st">"none"</span>, edgecolors <span class="op">=</span> <span class="st">"black"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Budget"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Revenue"</span>)</span>
@@ -374,7 +396,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Clearly, movies with higher budgets tend to have higher revenues. To estimate the regression coefficients, you can use the <code>smf.ols()</code> command, where the model is specified by a formula as in R, and the method <code>fit()</code> estimates the model:</p>
-<div id="4fbc52da" class="cell" data-execution_count="3">
+<div id="1997bce2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lm_result <span class="op">=</span> smf.ols(formula <span class="op">=</span> <span class="st">"revenue ~ budget"</span>, data <span class="op">=</span> data_set).fit()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lm_result.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -383,8 +405,8 @@ window.Quarto = {
 Dep. Variable:                revenue   R-squared:                       0.534
 Model:                            OLS   Adj. R-squared:                  0.534
 Method:                 Least Squares   F-statistic:                     5504.
-Date:                Wed, 23 Sep 2026   Prob (F-statistic):               0.00
-Time:                        16:55:01   Log-Likelihood:                -95797.
+Date:                Wed, 28 Oct 2026   Prob (F-statistic):               0.00
+Time:                        09:17:33   Log-Likelihood:                -95797.
 No. Observations:                4803   AIC:                         1.916e+05
 Df Residuals:                    4801   BIC:                         1.916e+05
 Df Model:                           1                                         
@@ -409,7 +431,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 <p>Think about how you can interpret the estimated slope coefficient.</p>
 <p>We can also plot the regression line in the scatter plot:</p>
-<div id="6bdc04ae" class="cell" data-execution_count="4">
+<div id="ad5cb2f2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>b0 <span class="op">=</span> lm_result.params[<span class="st">"Intercept"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>b1 <span class="op">=</span> lm_result.params[<span class="st">"budget"</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -429,7 +451,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 </div>
 <p>Let’s now see if a higher budget also implies a higher rating:</p>
-<div id="cb1244f2" class="cell" data-execution_count="5">
+<div id="f0a9543a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lm_result_rating <span class="op">=</span> smf.ols(formula <span class="op">=</span> <span class="st">"vote_average ~ budget"</span>, data <span class="op">=</span> data_set).fit()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lm_result_rating.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -438,8 +460,8 @@ strong multicollinearity or other numerical problems.</code></pre>
 Dep. Variable:           vote_average   R-squared:                       0.009
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     42.02
-Date:                Wed, 23 Sep 2026   Prob (F-statistic):           9.95e-11
-Time:                        16:55:01   Log-Likelihood:                -7647.8
+Date:                Wed, 28 Oct 2026   Prob (F-statistic):           9.95e-11
+Time:                        09:17:33   Log-Likelihood:                -7647.8
 No. Observations:                4803   AIC:                         1.530e+04
 Df Residuals:                    4801   BIC:                         1.531e+04
 Df Model:                           1                                         
@@ -464,11 +486,11 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 <p>Notice that the estimated slope coefficient is tiny. Does that mean that the rating is unrelated to the budget?</p>
 <p>The budget is often huge. For a better interpretation of the coefficients, define the budget in millions as</p>
-<div id="ee1ba6b4" class="cell" data-execution_count="6">
+<div id="cf107264" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data_set[<span class="st">"budget_mil"</span>] <span class="op">=</span> data_set[<span class="st">"budget"</span>]<span class="op">/</span><span class="dv">1000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>look at summary statistics of the variables</p>
-<div id="3f804a2e" class="cell" data-execution_count="7">
+<div id="b1ec411e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_set[[<span class="st">"vote_average"</span>, <span class="st">"budget_mil"</span>]].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -530,7 +552,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 </div>
 <p>and redo the analysis:</p>
-<div id="b04dcb19" class="cell" data-execution_count="8">
+<div id="2be56b9c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lm_result_rating <span class="op">=</span> smf.ols(formula <span class="op">=</span> <span class="st">"vote_average ~ budget_mil"</span>, data <span class="op">=</span> data_set).fit()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lm_result_rating.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -539,8 +561,8 @@ strong multicollinearity or other numerical problems.</code></pre>
 Dep. Variable:           vote_average   R-squared:                       0.009
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     42.02
-Date:                Wed, 23 Sep 2026   Prob (F-statistic):           9.95e-11
-Time:                        16:55:02   Log-Likelihood:                -7647.8
+Date:                Wed, 28 Oct 2026   Prob (F-statistic):           9.95e-11
+Time:                        09:17:33   Log-Likelihood:                -7647.8
 No. Observations:                4803   AIC:                         1.530e+04
 Df Residuals:                    4801   BIC:                         1.531e+04
 Df Model:                           1                                         
@@ -564,8 +586,8 @@ Notes:
 <p>Do think that the budget has a large impact on the rating?</p>
 <p>Of course, we are not limited to one regressors. To include three regressors, can use <code>smf.ols(formula = "Y ~ X1 + X2 + X3", data = ...)</code>. We will return to regression analysis later in the semester.</p>
 </section>
-<section id="exercises-vii" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="exercises-vii"><span class="header-section-number">15.3</span> Exercises VII</h2>
+<section id="exercises-vii" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="exercises-vii"><span class="header-section-number">16.3</span> Exercises VII</h2>
 <p><strong>Exercise 1:</strong></p>
 <p>In the previous section, we looked at Monte Carlo simulations in a very simple setting. We can analyze analogous issues in other settings, such as the linear regression model. Also in this case, we have parameters (the regression coefficients) and estimators (the OLS estimators). The parameters are random and have certain known small and large sample properties that you discussed in the theoretical part of the class. Many other small sample properties, such as actual coverage rates of confidence intervals are unknown, but can be studies in Monte Carlo simulations.</p>
 <p>Let <span class="math display">\[Y_i = \beta_1 X_{i1} + \beta_2 X_{i2}+  \beta_3 + e_i, \qquad i = 1, 2, \ldots, n.\]</span> where <span class="math display">\[\begin{pmatrix}X_{i1}\\X_{i2}\\\end{pmatrix} \sim N\left( \begin{pmatrix}2\\-3 \end{pmatrix}, \begin{pmatrix}1&amp; \rho  \\ \rho &amp;1 \end{pmatrix} \right)\]</span> and <span class="math inline">\((\beta_1, \beta_2, \beta_3) = (2,1,-1)\)</span>. Let <span class="math inline">\(e_i \sim U[-2,2]\)</span> and assume that <span class="math inline">\(e_i\)</span> is independent of <span class="math inline">\((X_{i1},X_{i2})\)</span>. Assume that the data is a random sample. Let <span class="math inline">\((\hat{\beta}_1, \hat{\beta}_2, \hat{\beta}_3 )\)</span> be the OLS estimator of <span class="math inline">\((\beta_1, \beta_2, \beta_3)\)</span>.</p>
@@ -591,6 +613,7 @@ Notes:
 <p>Assume that <span class="math inline">\(X \sim U[0,1]\)</span> and <span class="math inline">\(Y \sim U[0,1]\)</span> are independent random variables. For different sample sizes (<span class="math inline">\(n \in\{ 2, 5, 10, 100, 1000\}\)</span>) draw two i.i.d. samples of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and regress <span class="math inline">\(Y\)</span> on <span class="math inline">\(X\)</span> for both samples. Using a Monte-Carlo simulation, approximate the probability that the two corresponding regression lines intersect on <span class="math inline">\([0,1]\times  [0,1]\)</span>. Do the results depend on the sample size?</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1160,13 +1183,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Python-06-Monte-Carlo-Simulations.html" class="pagination-link" aria-label="Monte Carlo simulations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span>
+      <a href="./Python-06-Monte-Carlo-Simulations.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Python-08-Notes-on-useful-packages.html" class="pagination-link" aria-label="Some notes on useful packages">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Python-08-Notes-on-useful-packages.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

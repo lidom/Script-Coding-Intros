@@ -8,3 +8,17 @@ $link-color: $primary;
 img {
   max-width: 100%;
 }
+
+/*-- scss:rules --*/
+// More vertical space between list items; use via ::: {.spaced-list}
+// (margin on the div itself matters when each item is its own .spaced-list box)
+.spaced-list {
+  margin-bottom: 3em;
+}
+.spaced-list li {
+  margin-bottom: 6em;
+}
+.spaced-list li li {
+  margin-top: 4.5em;
+  margin-bottom: 4.5em;
+}

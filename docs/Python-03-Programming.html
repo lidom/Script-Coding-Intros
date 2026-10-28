@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Simple programming – Coding Intros</title>
+<title>11&nbsp; jupyter: python3 – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,6 +104,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script>
 
 
 </head>
@@ -117,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-03-Programming.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-03-Programming.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -167,19 +181,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -197,19 +211,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -226,49 +240,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -283,20 +297,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-for-loop" id="toc-the-for-loop" class="nav-link active" data-scroll-target="#the-for-loop"><span class="header-section-number">11.1</span> The for-loop</a></li>
-  <li><a href="#the-if-condition" id="toc-the-if-condition" class="nav-link" data-scroll-target="#the-if-condition"><span class="header-section-number">11.2</span> The if-condition</a></li>
-  <li><a href="#the-while-loop" id="toc-the-while-loop" class="nav-link" data-scroll-target="#the-while-loop"><span class="header-section-number">11.3</span> The while-loop</a></li>
-  <li><a href="#time-saving-and-loops" id="toc-time-saving-and-loops" class="nav-link" data-scroll-target="#time-saving-and-loops"><span class="header-section-number">11.4</span> Time saving and loops</a></li>
-  <li><a href="#exercises-iii" id="toc-exercises-iii" class="nav-link" data-scroll-target="#exercises-iii"><span class="header-section-number">11.5</span> Exercises III</a></li>
+  <li><a href="#simple-programming" id="toc-simple-programming" class="nav-link active" data-scroll-target="#simple-programming"><span class="header-section-number">12</span> Simple Programming</a>
+  <ul class="collapse">
+  <li><a href="#the-for-loop" id="toc-the-for-loop" class="nav-link" data-scroll-target="#the-for-loop"><span class="header-section-number">12.1</span> The For-Loop</a></li>
+  <li><a href="#the-if-condition" id="toc-the-if-condition" class="nav-link" data-scroll-target="#the-if-condition"><span class="header-section-number">12.2</span> The If-Condition</a></li>
+  <li><a href="#the-while-loop" id="toc-the-while-loop" class="nav-link" data-scroll-target="#the-while-loop"><span class="header-section-number">12.3</span> The While-Loop</a></li>
+  <li><a href="#time-saving-and-loops" id="toc-time-saving-and-loops" class="nav-link" data-scroll-target="#time-saving-and-loops"><span class="header-section-number">12.4</span> Time Saving and Loops</a></li>
+  <li><a href="#exercises-iii" id="toc-exercises-iii" class="nav-link" data-scroll-target="#exercises-iii"><span class="header-section-number">12.5</span> Exercises III</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-03-Programming.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-03-Programming.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">jupyter: python3</span></h1>
 </div>
 
 
@@ -313,12 +330,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<!-- LTeX: language=en-US -->
+<hr>
+<section id="simple-programming" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Simple Programming</h1>
 <p>We often want to repeat specific operations several times. For example, we might want to repeat an operation for different elements of a given data structure, such as columns of a matrix, or perform an operation until a satisfactory result is reached, such as running an algorithm until the value converges to a prespecified level. In addition, we often need to check whether certain conditions are fulfilled, such as whether elements of a vector are equal to 0, and perform an operation depending on the result.</p>
 <p><strong>Attention:</strong> In Python, blocks of code (e.g., the body of a loop) are not enclosed by curly brackets <code>{}</code> as in R, but are defined by their <em>indentation</em>. By convention, one uses four spaces per level of indentation.</p>
-<section id="the-for-loop" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="the-for-loop"><span class="header-section-number">11.1</span> The for-loop</h2>
+<section id="the-for-loop" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="the-for-loop"><span class="header-section-number">12.1</span> The For-Loop</h2>
 <p>A for-loop is a procedure in which a particular routine is repeated and only an index variable is changed.</p>
-<div id="6c205586" class="cell" data-execution_count="1">
+<div id="a60a0df0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>):</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">+</span> i</span>
@@ -331,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Note that <code>range(1, 4)</code> generates the numbers 1, 2, and 3, i.e., the <code>stop</code> value 4 is not included.</p>
 <p>We can also use it to study the behavior of the arithmetic mean</p>
-<div id="00beb414" class="cell" data-execution_count="2">
+<div id="aaace538" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
@@ -356,24 +377,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(out))</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.std(out, ddof <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>-0.047602294047039494
-0.21434743786883612
--0.005776425106060026
-0.06451858754442705</code></pre>
+<pre><code>-0.011577404635355244
+0.2263382326210905
+-0.009633107951882644
+0.06990606056901366</code></pre>
 </div>
 </div>
 </section>
-<section id="the-if-condition" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="the-if-condition"><span class="header-section-number">11.2</span> The if-condition</h2>
+<section id="the-if-condition" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="the-if-condition"><span class="header-section-number">12.2</span> The If-Condition</h2>
 <p>Within a for-loop, it may be useful to perform arithmetic operations only under certain conditions. The basic syntax for this is</p>
-<div id="dbaf1def" class="cell" data-execution_count="3">
+<div id="f182b236" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    statement</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    alternative</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>where <code>else</code> can remain unspecified. Further conditions can be checked with <code>elif condition:</code>.</p>
-<div id="9eabe324" class="cell" data-execution_count="4">
+<div id="78b0120b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">###If-condition###</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">4</span>])</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(y)</span>
@@ -389,20 +410,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>In shorter form the <code>np.where()</code> command is an alternative, which works element-wise on vectors.</p>
-<div id="8afd6357" class="cell" data-execution_count="5">
+<div id="88f8f023" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.where(test, yes, no)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="the-while-loop" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="the-while-loop"><span class="header-section-number">11.3</span> The while-loop</h2>
+<section id="the-while-loop" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="the-while-loop"><span class="header-section-number">12.3</span> The While-Loop</h2>
 <p>The while-loop performs a program (“statement”) as long as certain data conditions (“test expression”) are met. The basic syntax is</p>
-<div id="2b8de755" class="cell" data-execution_count="6">
+<div id="1a0d7956" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> test_expression:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># increment (i+1);</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    statement</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here, <code>test_expression</code> is evaluated and the body of the loop is entered if the result is <code>True</code>.</p>
-<div id="fb5e17b2" class="cell" data-execution_count="7">
+<div id="8e28d830" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">6</span>:</span>
@@ -417,11 +438,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="time-saving-and-loops" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="time-saving-and-loops"><span class="header-section-number">11.4</span> Time saving and loops</h2>
+<section id="time-saving-and-loops" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="time-saving-and-loops"><span class="header-section-number">12.4</span> Time Saving and Loops</h2>
 <p>One easy way to make your loops faster is to preallocate space for your results instead of appending them to a vector. NumPy arrays have a fixed size. Appending a value with <code>np.append()</code> therefore creates a new array and copies the whole data from one place in memory to another, when you simply wanted to append another value to your vector.</p>
 <p>If you look at the following code fragments, the second one is much faster! (We use only 20000 iterations here, since the first version takes very long otherwise.)</p>
-<div id="a017f8b0" class="cell" data-execution_count="8">
+<div id="ddc4b084" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The slow but simple way</span></span>
@@ -432,10 +453,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>time1 <span class="op">=</span> time.perf_counter() <span class="op">-</span> start</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.22834948599847849</code></pre>
+<pre><code>0.10735942501924</code></pre>
 </div>
 </div>
-<div id="b95f44fb" class="cell" data-execution_count="9">
+<div id="e6b19860" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The right way to do it</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.perf_counter()</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>results2 <span class="op">=</span> np.zeros(<span class="dv">20000</span>)</span>
@@ -444,24 +465,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>time2 <span class="op">=</span> time.perf_counter() <span class="op">-</span> start</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.04415532799976063</code></pre>
+<pre><code>0.01650766300735995</code></pre>
 </div>
 </div>
 <p>If you can avoid a loop altogether and use vector operations instead, your code will will be even faster.</p>
-<div id="0e14e6b3" class="cell" data-execution_count="10">
+<div id="9984611d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The right way to do it</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.perf_counter()</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>results3 <span class="op">=</span> rng.normal(size <span class="op">=</span> <span class="dv">20000</span>)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>time3 <span class="op">=</span> time.perf_counter() <span class="op">-</span> start</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.0008500580006511882</code></pre>
+<pre><code>0.00039684001239947975</code></pre>
 </div>
 </div>
 <p>Try to keep this in mind when designing your own code. In Python this is one of the most frequent and easily avoidable reasons for why code is slow. (Note: Python’s built-in <code>list</code> objects are an exception. Appending to a list with <code>my_list.append(value)</code> is fast.)</p>
 </section>
-<section id="exercises-iii" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="exercises-iii"><span class="header-section-number">11.5</span> Exercises III</h2>
+<section id="exercises-iii" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="exercises-iii"><span class="header-section-number">12.5</span> Exercises III</h2>
 <p><strong>Exercise 1:</strong></p>
 <p>Write a for-loop that iterates over the numbers 6 to 14 and prints the cube of each number using <code>print()</code></p>
 <p><strong>Exercise 2:</strong></p>
@@ -470,6 +491,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Using a for-loop simulate the flip a coin twenty times, keeping track of the individual outcomes (1 = heads, 0 = tails) in a vector that you preallocated.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1039,13 +1061,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Python-02-Datasets.html" class="pagination-link" aria-label="Create and load data sets">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span>
+      <a href="./Python-02-Datasets.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Python-04-Functions.html" class="pagination-link" aria-label="Functions">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Python-04-Functions.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

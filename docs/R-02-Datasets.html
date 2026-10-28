@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>2&nbsp; Create and load data sets – Coding Intros</title>
+<title>2&nbsp; Create and Load Data Sets – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -107,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-02-Datasets.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-02-Datasets.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,19 +165,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -182,19 +195,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,49 +224,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -266,16 +279,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#simulated-data" id="toc-simulated-data" class="nav-link active" data-scroll-target="#simulated-data"><span class="header-section-number">2.1</span> Simulated data</a></li>
-  <li><a href="#load-datasets" id="toc-load-datasets" class="nav-link" data-scroll-target="#load-datasets"><span class="header-section-number">2.2</span> Load datasets</a></li>
-  <li><a href="#save-datasets" id="toc-save-datasets" class="nav-link" data-scroll-target="#save-datasets"><span class="header-section-number">2.3</span> Save datasets</a></li>
+<li><a href="#simulated-data" id="toc-simulated-data" class="nav-link active" data-scroll-target="#simulated-data"><span class="header-section-number">2.1</span> Simulated Data</a></li>
+  <li><a href="#load-datasets" id="toc-load-datasets" class="nav-link" data-scroll-target="#load-datasets"><span class="header-section-number">2.2</span> Load Datasets</a></li>
+  <li><a href="#save-datasets" id="toc-save-datasets" class="nav-link" data-scroll-target="#save-datasets"><span class="header-section-number">2.3</span> Save Datasets</a></li>
   <li><a href="#exercises-ii" id="toc-exercises-ii" class="nav-link" data-scroll-target="#exercises-ii"><span class="header-section-number">2.4</span> Exercises II</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-02-Datasets.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-02-Datasets.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span>
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span>
 </h1>
 </div>
 
@@ -290,9 +303,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>We will use R to analyze both simulate and real data. Simulated data will be crucial to study small sample properties of estimators.</p>
+</header><!-- LTeX: language=en-US --><p>We will use R to analyze both simulate and real data. Simulated data will be crucial to study small sample properties of estimators.</p>
 <section id="simulated-data" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="simulated-data">
-<span class="header-section-number">2.1</span> Simulated data</h2>
+<span class="header-section-number">2.1</span> Simulated Data</h2>
 <p>We start by considering data that is simulated by the user. We can create data sets by using functions like <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code>, <code><a href="https://rdrr.io/r/stats/Exponential.html">rexp()</a></code> or <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code>. After the data is created we can work with it as shown in the following example:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">n</span> <span class="op">=</span> <span class="fl">100</span>  <span class="co"># number of observations</span></span>
@@ -300,34 +313,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">Z</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n</span>, mean <span class="op">=</span> <span class="fl">5</span>, sd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>      <span class="co"># draw from normal distribution </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Z</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.4371</code></pre>
+<pre><code>[1] 5.061976</code></pre>
 </div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Z</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.980251</code></pre>
+<pre><code>[1] 3.239456</code></pre>
 </div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">E</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html">rexp</a></span><span class="op">(</span><span class="va">n</span>, rate <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>           <span class="co"># draw data from exponential distribution </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">E</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2700577</code></pre>
+<pre><code>[1] 0.3883579</code></pre>
 </div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">E</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2707263</code></pre>
+<pre><code>[1] 0.4093271</code></pre>
 </div>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">U</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">n</span>, min <span class="op">=</span> <span class="fl">3</span>, max <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>  <span class="co"># draw data from uniform distribution</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">U</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.973994</code></pre>
+<pre><code>[1] 4.072383</code></pre>
 </div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">U</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6088016</code></pre>
+<pre><code>[1] 0.5690878</code></pre>
 </div>
 </div>
 <p>Analogous functions exist for many other distributions in R, and you can find them by searching on the web.</p>
 </section><section id="load-datasets" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="load-datasets">
-<span class="header-section-number">2.2</span> Load datasets</h2>
+<span class="header-section-number">2.2</span> Load Datasets</h2>
 <p>It is also possible to work with observed data, which will be loaded into R. Here, we will use some real data, namely a movie database from IMDB that you can download <a href="https://www.kaggle.com/tmdb/tmdb-movie-metadata#">here</a>. The data set contains, among others, the budget, the revenue, and the average rating of movies.</p>
 <p>Once the data is saved in your working directory, you can load it using</p>
 <div class="cell" data-layout-align="center">
@@ -357,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Apart from <code>read.csv</code> there exist also <code>read.dta</code>, <code>read.xls</code> and many more to load suitable data sets.</p>
 <p>Another important function is <code>readRDS</code> that is used to read in a data set that was saved using the function <code>saveRDS</code>. These functions can be useful in case properties of your R object are not preserved when saved in other formats, such as a csv file.</p>
 </section><section id="save-datasets" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="save-datasets">
-<span class="header-section-number">2.3</span> Save datasets</h2>
+<span class="header-section-number">2.3</span> Save Datasets</h2>
 <p>There are also multiple ways to save your own data. While <code>read.csv</code> can be used to read in data from a csv file, its counterpart <code>write.csv</code> can be used to save a suitable object as a csv file. The most important arguments for this function are <code>x</code>, the object you want to save, and <code>file</code>, which provides the path where to save the file.</p>
 <pre><code>write.csv(data_set, &lt;my_path&gt;)</code></pre>
 <p>Similarly the function <code>saveRDS</code> allows you to save a generic R object to storage. One advantage of this function compared to <code>write.csv</code> is that it preserves properties of your object that might be lost when saved as a csv file. For example, conversions from factors to strings might occur when saving a <code>data.frame</code> as a csv file.</p>
@@ -943,13 +956,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./R-01-Getting-Started.html" class="pagination-link" aria-label="The first steps in R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span>
+      <a href="./R-01-Getting-Started.html" class="pagination-link" aria-label="The First Steps in R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./R-03-Programming.html" class="pagination-link" aria-label="Simple programming">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./R-03-Programming.html" class="pagination-link" aria-label="Simple Programming">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

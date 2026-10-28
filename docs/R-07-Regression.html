@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>7&nbsp; Regression analysis – Coding Intros</title>
+<title>7&nbsp; Regression Analysis – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script><script type="text/javascript">
+}</script><script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -132,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-07-Regression.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-07-Regression.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -177,19 +190,19 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,19 +220,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -236,49 +249,49 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -291,15 +304,15 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#basic-linear-model" id="toc-basic-linear-model" class="nav-link active" data-scroll-target="#basic-linear-model"><span class="header-section-number">7.1</span> Basic linear model</a></li>
-  <li><a href="#empirical-example" id="toc-empirical-example" class="nav-link" data-scroll-target="#empirical-example"><span class="header-section-number">7.2</span> Empirical example</a></li>
+<li><a href="#basic-linear-model" id="toc-basic-linear-model" class="nav-link active" data-scroll-target="#basic-linear-model"><span class="header-section-number">7.1</span> Basic Linear Model</a></li>
+  <li><a href="#empirical-example" id="toc-empirical-example" class="nav-link" data-scroll-target="#empirical-example"><span class="header-section-number">7.2</span> Empirical Example</a></li>
   <li><a href="#exercises-vii" id="toc-exercises-vii" class="nav-link" data-scroll-target="#exercises-vii"><span class="header-section-number">7.3</span> Exercises VII</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-07-Regression.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-07-Regression.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span>
+<span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span>
 </h1>
 </div>
 
@@ -314,12 +327,12 @@ window.Quarto = {
   
 
 
-</header><section id="basic-linear-model" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="basic-linear-model">
-<span class="header-section-number">7.1</span> Basic linear model</h2>
+</header><!-- LTeX: language=en-US --><!-- LTeX: language=en-US --><section id="basic-linear-model" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="basic-linear-model">
+<span class="header-section-number">7.1</span> Basic Linear Model</h2>
 <p>You have probably all learnt about the linear regression model in a previous econometrics class where <span class="math display">\[Y =  \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_{k} X_{k} + \beta_{k+1} + e \]</span> and <span class="math display">\[E(e \mid X_1, X_2, \ldots, X_{k}) = 0.\]</span> That is, the conditional mean of the outcome variable <span class="math inline">\(Y\)</span> is a linear function of the regressors <span class="math inline">\(X_1, X_2, \ldots, X_{k}\)</span>.</p>
 <p>When we have a random sample of size <span class="math inline">\(n\)</span>, we can also write <span class="math display">\[Y_i = \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_k X_{ik} + \beta_{k+1} +  e_i, \qquad i = 1, 2, \ldots, n.\]</span> Our goal is to estimate the coefficients <span class="math inline">\(\beta_1, \ldots, \beta_{k+1}\)</span> using the data <span class="math inline">\(\{Y_i, X_{i1},X_{i2},\ldots, X_{ik}\}^n_{i=1}\)</span>.</p>
 </section><section id="empirical-example" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="empirical-example">
-<span class="header-section-number">7.2</span> Empirical example</h2>
+<span class="header-section-number">7.2</span> Empirical Example</h2>
 <p>We will now see how to run regressions in R using the movie data set. Again, you can load it using</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_set</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"tmdb_5000_movies.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1044,13 +1057,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./R-06-Monte-Carlo-Simulations.html" class="pagination-link" aria-label="Monte Carlo simulations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span>
+      <a href="./R-06-Monte-Carlo-Simulations.html" class="pagination-link" aria-label="Monte Carlo Simulations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./R-08-Notes-on-useful-packages.html" class="pagination-link" aria-label="Some notes on useful packages">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./R-08-Notes-on-useful-packages.html" class="pagination-link" aria-label="Some Notes on Useful Packages">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

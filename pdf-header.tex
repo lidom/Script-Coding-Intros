@@ -1,2 +1,9 @@
 \usepackage{fvextra}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+% Independence symbol (double perp), scales correctly with math style.
+% Source: https://tex.stackexchange.com/q/79434
+% Posted by Memming, modified by community. See post 'Timeline' for change history.
+% Retrieved 2026-10-21, License - CC BY-SA 3.0
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}

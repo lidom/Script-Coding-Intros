@@ -1,8 +1,9 @@
-# Simple programming
+<!-- LTeX: language=en-US -->
+# Simple Programming
 
 We often want to repeat specific operations several times. For example, we might want to repeat an operation  for different elements of a given data structure, such as columns of a matrix, or perform an operation until a satisfactory result is reached, such as running an algorithm until the value converges to a prespecified level. In addition, we often need to check whether certain conditions are fulfilled, such as whether elements of a vector are equal to 0, and perform an operation depending on the result.
 
-## The for-loop
+## The For-Loop
 
 A for-loop is a procedure in which a particular routine is repeated and only an index variable is changed.
 ```{r, error = TRUE}
@@ -40,7 +41,7 @@ sd(out)
  
  
  
-## The if-condition
+## The If-Condition
 
 Within a for-loop, it may be useful to perform arithmetic operations only under certain conditions. The basic syntax for this is
 ```{r, error = TRUE,eval=F }
@@ -78,7 +79,7 @@ ifelse(test, yes, no)
 
  
  
-## The while-loop
+## The While-Loop
  
  The while-loop performs a program ("statement") as long as certain data conditions ("test expression") are met. The basic syntax is
  
@@ -102,7 +103,7 @@ while (i < 6) {
 }
 ```
 
-## Time saving and loops
+## Time Saving and Loops
 
 One easy way to make your loops in R faster is to preallocate space for your results instead of appending them to a vector. This is caused by the underlying architectural choice of R that is called copy-on-modify. In some cases it leads to your whole data being copied from one place in memory to another, when you simply wanted to append another value to your vector. 
 

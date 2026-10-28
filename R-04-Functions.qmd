@@ -1,9 +1,10 @@
+<!-- LTeX: language=en-US -->
 # Functions
 
 If you want to make your code more readable and easily understandable, you should split up complicated tasks into more simple ones. A convenient way to do this is defining a function that generalizes a step of your code. If you define this function in advance, you can call it later to perform the task, which might make the code more easily readable and enables you to use paradigmas such as recursion or metaprogramming.
 
 
-## Function definition
+## Function Definition
 
 A function definition follows a specific structure. 
 ```{r}

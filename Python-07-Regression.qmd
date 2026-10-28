@@ -1,13 +1,14 @@
+<!-- LTeX: language=en-US -->
 ---
 jupyter: python3
 ---
 
-# Regression analysis
+# Regression Analysis
 
 
 {{< include _regression-model.qmd >}}
 
-## Empirical example
+## Empirical Example
 
 We will now see how to run regressions in Python using the movie data set and the package **statsmodels**. Again, you can load the data using
 ```{python}

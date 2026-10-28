@@ -11,7 +11,7 @@ Both parts have the same structure: each chapter of the R part has a counterpart
 
 
 
-### Downloads 
+### Downloads
 
 -    R is free of charge and can be downloaded from [https://cran.r-project.org/](https://cran.r-project.org/) 
 -    Python is free of charge and can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/) 
@@ -19,12 +19,12 @@ Both parts have the same structure: each chapter of the R part has a counterpart
      [https://positron.posit.co/download.html](https://positron.posit.co/download.html) 
 
 
-### On using LLMs {-}
+### On Using LLMs {-}
 
 Of course, you can also ask large language models (LLMs) such as [ChatGPT](https://openai.com/chatgpt/) or [Claude](https://claude.com/). **But:** Don't fool yourself! Getting an answer from an LLM is not the same as learning and understanding.
 
 
-### Why do we use R and Python? {-}
+### Why Do We Use R and Python? {-}
 
 -    R is free of charge and can be downloaded from [https://cran.r-project.org/](https://cran.r-project.org/) 
 -    Python is free of charge and can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/) 
@@ -38,7 +38,7 @@ Of course, you can also ask large language models (LLMs) such as [ChatGPT](https
 
 
 
-### Some additional references and tutorials for R {-}
+### Some Additional References and Tutorials for R {-}
 
 -   The online textbook [Introduction to Econometrics with R](https://www.econometrics-with-r.org/) 
 -   [Reference card for R commands](https://cran.r-project.org/doc/contrib/refcard.pdf)  
@@ -51,7 +51,7 @@ Of course, you can also ask large language models (LLMs) such as [ChatGPT](https
 -   [An introduction to statistical learning with R](https://www.statlearning.com/)   
 
 
-### Some additional references and tutorials for Python {-}
+### Some Additional References and Tutorials for Python {-}
 
 -   [The official Python tutorial](https://docs.python.org/3/tutorial/)  
 -   The online lectures [Python Programming for Economics and Finance](https://python-programming.quantecon.org/) by QuantEcon  

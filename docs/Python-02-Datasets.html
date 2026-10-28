@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Create and load data sets – Coding Intros</title>
+<title>10&nbsp; jupyter: python3 – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,6 +104,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
@@ -146,7 +160,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-02-Datasets.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-02-Datasets.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -196,19 +210,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -226,19 +240,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -255,49 +269,49 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -312,19 +326,22 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#simulated-data" id="toc-simulated-data" class="nav-link active" data-scroll-target="#simulated-data"><span class="header-section-number">10.1</span> Simulated data</a></li>
-  <li><a href="#load-datasets" id="toc-load-datasets" class="nav-link" data-scroll-target="#load-datasets"><span class="header-section-number">10.2</span> Load datasets</a></li>
-  <li><a href="#save-datasets" id="toc-save-datasets" class="nav-link" data-scroll-target="#save-datasets"><span class="header-section-number">10.3</span> Save datasets</a></li>
-  <li><a href="#exercises-ii" id="toc-exercises-ii" class="nav-link" data-scroll-target="#exercises-ii"><span class="header-section-number">10.4</span> Exercises II</a></li>
+  <li><a href="#create-and-load-data-sets" id="toc-create-and-load-data-sets" class="nav-link active" data-scroll-target="#create-and-load-data-sets"><span class="header-section-number">11</span> Create and Load Data Sets</a>
+  <ul class="collapse">
+  <li><a href="#simulated-data" id="toc-simulated-data" class="nav-link" data-scroll-target="#simulated-data"><span class="header-section-number">11.1</span> Simulated Data</a></li>
+  <li><a href="#load-datasets" id="toc-load-datasets" class="nav-link" data-scroll-target="#load-datasets"><span class="header-section-number">11.2</span> Load Datasets</a></li>
+  <li><a href="#save-datasets" id="toc-save-datasets" class="nav-link" data-scroll-target="#save-datasets"><span class="header-section-number">11.3</span> Save Datasets</a></li>
+  <li><a href="#exercises-ii" id="toc-exercises-ii" class="nav-link" data-scroll-target="#exercises-ii"><span class="header-section-number">11.4</span> Exercises II</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-02-Datasets.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-02-Datasets.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">jupyter: python3</span></h1>
 </div>
 
 
@@ -341,11 +358,15 @@ window.Quarto = {
 </header>
 
 
+<!-- LTeX: language=en-US -->
+<hr>
+<section id="create-and-load-data-sets" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Create and Load Data Sets</h1>
 <p>We will use Python to analyze both simulate and real data. Simulated data will be crucial to study small sample properties of estimators.</p>
-<section id="simulated-data" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="simulated-data"><span class="header-section-number">10.1</span> Simulated data</h2>
+<section id="simulated-data" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="simulated-data"><span class="header-section-number">11.1</span> Simulated Data</h2>
 <p>We start by considering data that is simulated by the user. In NumPy, random numbers are drawn from a <em>random number generator</em>, which we create with <code>np.random.default_rng()</code>. We can then create data sets by using its methods like <code>normal()</code>, <code>exponential()</code> or <code>uniform()</code>. After the data is created we can work with it as shown in the following example:</p>
-<div id="d7d8ea88" class="cell" data-execution_count="1">
+<div id="362e7851" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()  <span class="co"># random number generator</span></span>
@@ -365,29 +386,29 @@ window.Quarto = {
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(U))</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.std(U, ddof <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>5.396117378575643
-3.0781346330269765
-0.37139291619409465
-0.3745982469539909
-4.001333487007003
-0.5696899572197283</code></pre>
+<pre><code>5.3663780437917055
+2.753065355975694
+0.3290761824248672
+0.30209921134505446
+4.035073440719582
+0.6284100473161681</code></pre>
 </div>
 </div>
 <p>Note that NumPy parametrizes the exponential distribution by its scale, i.e., by <span class="math inline">\(1/\text{rate}\)</span>.</p>
 <p>Analogous functions exist for many other distributions, and you can find them in the <a href="https://numpy.org/doc/stable/reference/random/generator.html">NumPy documentation</a>. Densities, distribution functions, and quantile functions are provided by the module <code>scipy.stats</code>.</p>
 </section>
-<section id="load-datasets" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="load-datasets"><span class="header-section-number">10.2</span> Load datasets</h2>
+<section id="load-datasets" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="load-datasets"><span class="header-section-number">11.2</span> Load Datasets</h2>
 <p>It is also possible to work with observed data, which will be loaded into Python. Here, we will use some real data, namely a movie database from IMDB that you can download <a href="https://www.kaggle.com/tmdb/tmdb-movie-metadata#">here</a>. The data set contains, among others, the budget, the revenue, and the average rating of movies.</p>
 <p>Once the data is saved in your working directory, you can load it with the pandas function <code>pd.read_csv()</code></p>
-<div id="fbb4b060" class="cell" data-execution_count="2">
+<div id="46c0031e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_set <span class="op">=</span> pd.read_csv(<span class="st">"tmdb_5000_movies.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>which stores the data in a data frame. You can use <code>data_set.head()</code> or the <em>Session</em> pane in Positron (click on the table symbol next to <code>data_set</code>) to look at the data.</p>
 <p>After the file is loaded, we can work with the data using <code>data_set["column_name"]</code> (or <code>data_set.column_name</code>) to access certain parts of the data set such as</p>
-<div id="e129ded2" class="cell" data-execution_count="3">
+<div id="868653a0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_set[<span class="st">"original_title"</span>][<span class="dv">0</span>:<span class="dv">5</span>])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_set[<span class="st">"budget"</span>][<span class="dv">0</span>:<span class="dv">5</span>])</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_set[<span class="st">"budget"</span>][<span class="dv">0</span>:<span class="dv">5</span>].mean())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -411,15 +432,15 @@ Name: budget, dtype: int64
 <p>Apart from <code>pd.read_csv</code> there exist also <code>pd.read_stata</code>, <code>pd.read_excel</code> and many more to load suitable data sets.</p>
 <p>Another important function is <code>pd.read_pickle</code> that is used to read in a data set that was saved using the method <code>to_pickle</code>. These functions can be useful in case properties of your Python object are not preserved when saved in other formats, such as a csv file. (Only read pickle files from sources you trust, since they can contain executable code.)</p>
 </section>
-<section id="save-datasets" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="save-datasets"><span class="header-section-number">10.3</span> Save datasets</h2>
+<section id="save-datasets" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="save-datasets"><span class="header-section-number">11.3</span> Save Datasets</h2>
 <p>There are also multiple ways to save your own data. While <code>pd.read_csv</code> can be used to read in data from a csv file, its counterpart, the data frame method <code>to_csv</code>, can be used to save a data frame as a csv file. The most important arguments of this method are <code>path_or_buf</code>, which provides the path where to save the file, and <code>index</code>, which specifies whether the row names should be saved as well.</p>
 <pre><code>data_set.to_csv(&lt;my_path&gt;, index = False)</code></pre>
 <p>Similarly, the method <code>to_pickle</code> allows you to save a data frame to storage. (For arbitrary Python objects you can use the module <code>pickle</code>.) One advantage compared to <code>to_csv</code> is that it preserves properties of your object that might be lost when saved as a csv file. For example, the data types of columns (e.g., dates or categorical variables) might get lost when saving a data frame as a csv file.</p>
 <p>The methods <code>to_excel</code> and <code>pd.read_excel</code> (which require the package <code>openpyxl</code>) can be used to write to and read in excel files, respectively. This format is usually not be the best option to store your data.</p>
 </section>
-<section id="exercises-ii" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="exercises-ii"><span class="header-section-number">10.4</span> Exercises II</h2>
+<section id="exercises-ii" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="exercises-ii"><span class="header-section-number">11.4</span> Exercises II</h2>
 <p><strong>Exercise 1:</strong></p>
 <p>Simulate a vector containing 10000 independent normally distributed random variables with means of 1 and variances of 2. How many of them are negative? What is the expected fraction of negative values?</p>
 <p><strong>Exercise 2:</strong></p>
@@ -433,6 +454,7 @@ Name: budget, dtype: int64
 <p>Take the objects you created in the previous exercises from this chapter and save them to storage in your preferred format. Then close your session, clean your workspace and read them in again. This might be tedious at first, but integrating the export of data into your workflow might save you from time costly mistakes in the future.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1002,13 +1024,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Python-01-Getting-Started.html" class="pagination-link" aria-label="The first steps in Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span>
+      <a href="./Python-01-Getting-Started.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Python-03-Programming.html" class="pagination-link" aria-label="Simple programming">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Python-03-Programming.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

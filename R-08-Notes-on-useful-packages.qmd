@@ -1,6 +1,7 @@
-# Some notes on useful packages
+<!-- LTeX: language=en-US -->
+# Some Notes on Useful Packages
 
-## The tidyverse family
+## The tidyverse Family
 ```"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."```
 The tidyverse family of R packages provides a comprehensive framework for many useful tools we need: from reading in data with readr [csv, tsv etc.] and haven [SPSS, Stata, SAS], wrangling it into the shape one desires with dplyr (mostly so called tidy-data) to visualization with ggplot2. These packages are not necessary to use R efficiently, but have a large following in the R community and often provide a more comfortable way to perform tedious tasks. A comprehensive guide to the tidyverse is provided in Hadley Wickham's book [R for Data Science](https://r4ds.had.co.nz/).
 
@@ -35,7 +36,7 @@ print(coeftest(my_model, vcov. = my_hc_vcov))
 
 --> 
 
-## MASS 
+## MASS
 Collection of many useful functions that originated as a support package for a book on applied statistics with S (the predecessor language of R). One example is its function `mvrnorm` that enables its user to draw from a multivariate normal with a given mean vector and covariance matrix.
 ```{r, warning=FALSE}
 library(MASS)

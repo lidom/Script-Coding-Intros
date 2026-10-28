@@ -1,4 +1,5 @@
-# Monte Carlo simulations
+<!-- LTeX: language=en-US -->
+# Monte Carlo Simulations
 
 {{< include _mc-concepts.qmd >}}
 
@@ -57,7 +58,7 @@ probs <- calc_probs_consistency(n = 200, S = 10000, p = 0.7, all_eps = seq(0.01,
 plot(all_eps,probs,ylim = c(0,1),xlab="epsilon",ylab="Probability", col = 'blue')
 ```
 
-## Asymptotic normality
+## Asymptotic Normality
 
 We know from the Central Limit Theorem that
 $$\frac{\sqrt{n}(\bar{X}_n - E(X))}{s_n} \rightarrow_D N(0,1)$$
@@ -95,7 +96,7 @@ lines(z, pnorm(z, 0, 1), col = 'red',lwd = 2)
 ```
 
 
-## Testing 
+## Testing
 
 Let $\{X_1, X_2, \dots, X_n\}$ be a random sample and define $\mu = E(X)$. Suppose we want to test $H_0: \mu = \mu_0$ where $\mu_0$ is a fixed number. To do so, define
 $$t = \frac{\sqrt{n}(\bar{X}_n - \mu_0)}{s_n} $$

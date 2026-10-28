@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>8&nbsp; Some notes on useful packages – Coding Intros</title>
+<title>8&nbsp; Some Notes on Useful Packages – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -107,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-08-Notes-on-useful-packages.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-08-Notes-on-useful-packages.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,19 +165,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -182,19 +195,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,49 +224,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -266,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#the-tidyverse-family" id="toc-the-tidyverse-family" class="nav-link active" data-scroll-target="#the-tidyverse-family"><span class="header-section-number">8.1</span> The tidyverse family</a></li>
+<li><a href="#the-tidyverse-family" id="toc-the-tidyverse-family" class="nav-link active" data-scroll-target="#the-tidyverse-family"><span class="header-section-number">8.1</span> The tidyverse Family</a></li>
   <li><a href="#tidymodels" id="toc-tidymodels" class="nav-link" data-scroll-target="#tidymodels"><span class="header-section-number">8.2</span> Tidymodels</a></li>
   <li><a href="#lmtest" id="toc-lmtest" class="nav-link" data-scroll-target="#lmtest"><span class="header-section-number">8.3</span> lmtest</a></li>
   <li><a href="#mass" id="toc-mass" class="nav-link" data-scroll-target="#mass"><span class="header-section-number">8.4</span> MASS</a></li>
@@ -277,9 +290,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-08-Notes-on-useful-packages.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-08-Notes-on-useful-packages.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span>
+<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span>
 </h1>
 </div>
 
@@ -294,8 +307,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="the-tidyverse-family" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="the-tidyverse-family">
-<span class="header-section-number">8.1</span> The tidyverse family</h2>
+</header><!-- LTeX: language=en-US --><section id="the-tidyverse-family" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="the-tidyverse-family">
+<span class="header-section-number">8.1</span> The tidyverse Family</h2>
 <p><code>"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."</code> The tidyverse family of R packages provides a comprehensive framework for many useful tools we need: from reading in data with readr [csv, tsv etc.] and haven [SPSS, Stata, SAS], wrangling it into the shape one desires with dplyr (mostly so called tidy-data) to visualization with ggplot2. These packages are not necessary to use R efficiently, but have a large following in the R community and often provide a more comfortable way to perform tedious tasks. A comprehensive guide to the tidyverse is provided in Hadley Wickham’s book <a href="https://r4ds.had.co.nz/">R for Data Science</a>.</p>
 </section><section id="tidymodels" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="tidymodels">
 <span class="header-section-number">8.2</span> Tidymodels</h2>
@@ -346,6 +359,8 @@ A package used to calculate many different robust covariance matrix estimators. 
 
 
 
+
+
 ::: {.cell layout-align="center"}
 
 ```{.r .cell-code}
@@ -360,7 +375,11 @@ my_hc_vcov <- vcovHC(x = my_model, type = "HC1")
 
 
 
+
+
 The first table describes our estimates when we assume homoskedastic error terms, while the second one correctly assumes heteroskedasticity.
+
+
 
 
 
@@ -377,8 +396,8 @@ print(coeftest(my_model))
 t test of coefficients:
 
              Estimate Std. Error t value Pr(>|t|)    
-(Intercept) -0.041836   0.137400 -0.3045   0.7608    
-x            1.190226   0.023683 50.2576   <2e-16 ***
+(Intercept) -0.048504   0.142372 -0.3407   0.7334    
+x            1.209918   0.024489 49.4064   <2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -397,8 +416,8 @@ print(coeftest(my_model, vcov. = my_hc_vcov))
 t test of coefficients:
 
              Estimate Std. Error t value Pr(>|t|)    
-(Intercept) -0.041836   0.097714 -0.4282   0.6686    
-x            1.190226   0.023618 50.3943   <2e-16 ***
+(Intercept) -0.048504   0.102849 -0.4716   0.6373    
+x            1.209918   0.023615 51.2362   <2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -406,6 +425,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 :::
 :::
+
+
 
 
 
@@ -419,19 +440,21 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <span><span class="va">my_sample</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">mvrnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, mu <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span>, Sigma <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">1</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">2</span>, byrow <span class="op">=</span> <span class="cn">T</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">my_sample</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             [,1]       [,2]
-[1,] -0.253467221 -0.6353386
-[2,] -0.002806009  0.5365062
-[3,]  0.794493627 -0.8022652
-[4,]  0.489077571 -0.4806961
-[5,]  2.252847378  0.9979122
-[6,]  0.008696179 -0.4486159</code></pre>
+<pre><code>           [,1]        [,2]
+[1,] -0.1273728 -0.66073760
+[2,]  1.2439943  1.15105999
+[3,]  0.3754190 -0.06191259
+[4,] -0.3154056 -0.39447833
+[5,] -1.0340187 -1.71613199
+[6,]  0.8287989  0.31081598</code></pre>
 </div>
 </div>
 </section><section id="aer---applied-econometrics-with-r" class="level2" data-number="8.5"><h2 data-number="8.5" class="anchored" data-anchor-id="aer---applied-econometrics-with-r">
 <span class="header-section-number">8.5</span> AER - “Applied Econometrics with R”</h2>
 <p>Provides many useful function in the context of applied Econometrics. One prominent example is the function <code>ivreg</code> used for IV-estimation.</p>
 <!--
+
+
 
 
 
@@ -494,23 +517,25 @@ ivreg(formula = y ~ x | z)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--3.12131 -0.71075  0.03933  0.75423  3.06411 
+-2.14109 -0.63336 -0.01142  0.62895  2.60725 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) -0.01142    0.11496  -0.099    0.921    
-x            1.99289    0.06631  30.055   <2e-16 ***
+(Intercept) -0.13490    0.09250  -1.458    0.146    
+x            2.07341    0.04972  41.698   <2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1.108 on 198 degrees of freedom
-Multiple R-Squared: 0.9229, Adjusted R-squared: 0.9225 
-Wald test: 903.3 on 1 and 198 DF,  p-value: < 2.2e-16 
+Residual standard error: 0.9569 on 198 degrees of freedom
+Multiple R-Squared: 0.9418, Adjusted R-squared: 0.9415 
+Wald test:  1739 on 1 and 198 DF,  p-value: < 2.2e-16 
 ```
 
 
 :::
 :::
+
+
 
 
 
@@ -1099,13 +1124,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./R-07-Regression.html" class="pagination-link" aria-label="Regression analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span>
+      <a href="./R-07-Regression.html" class="pagination-link" aria-label="Regression Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Python-01-Getting-Started.html" class="pagination-link" aria-label="The first steps in Python">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Python-01-Getting-Started.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

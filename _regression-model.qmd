@@ -1,4 +1,5 @@
-## Basic linear model
+<!-- LTeX: language=en-US -->
+## Basic Linear Model
 
 You have probably all learnt about the linear regression model in a previous econometrics class where
 $$Y =  \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_{k} X_{k} + \beta_{k+1} + e $$

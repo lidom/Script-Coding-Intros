@@ -1,8 +1,9 @@
+<!-- LTeX: language=en-US -->
 ---
 jupyter: python3
 ---
 
-# Monte Carlo simulations
+# Monte Carlo Simulations
 
 {{< include _mc-concepts.qmd >}}
 
@@ -71,7 +72,7 @@ plt.ylabel("Probability")
 plt.show()
 ```
 
-## Asymptotic normality
+## Asymptotic Normality
 
 We know from the Central Limit Theorem that
 $$\frac{\sqrt{n}(\bar{X}_n - E(X))}{s_n} \rightarrow_D N(0,1)$$

@@ -1,10 +1,11 @@
+<!-- LTeX: language=en-US -->
 ---
 jupyter: python3
 ---
 
-# Some notes on useful packages
+# Some Notes on Useful Packages
 
-## The PyData family
+## The PyData Family
 NumPy, pandas, matplotlib, and seaborn, which we used throughout this tutorial, form the core of the so-called PyData ecosystem. Together, they provide a comprehensive framework for many useful tools we need: from reading in data with pandas [csv, Stata, SPSS, SAS, Excel etc.], wrangling it into the shape one desires with pandas to visualization with matplotlib and seaborn. A comprehensive guide is provided in Wes McKinney's (the creator of pandas) book [Python for Data Analysis](https://wesmckinney.com/book/). A fast, modern alternative to pandas is the package [polars](https://pola.rs/).
 
 ## scikit-learn

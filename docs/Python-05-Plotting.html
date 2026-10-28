@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Plotting in Python – Coding Intros</title>
+<title>13&nbsp; jupyter: python3 – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,6 +104,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
@@ -146,7 +160,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-05-Plotting.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-05-Plotting.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -196,19 +210,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -226,19 +240,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -255,49 +269,49 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -312,18 +326,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-plot-function" id="toc-the-plot-function" class="nav-link active" data-scroll-target="#the-plot-function"><span class="header-section-number">13.1</span> The plot-function</a></li>
-  <li><a href="#histograms-and-kernel-densities" id="toc-histograms-and-kernel-densities" class="nav-link" data-scroll-target="#histograms-and-kernel-densities"><span class="header-section-number">13.2</span> Histograms and kernel densities</a></li>
-  <li><a href="#exercises-v" id="toc-exercises-v" class="nav-link" data-scroll-target="#exercises-v"><span class="header-section-number">13.3</span> Exercises V</a></li>
+  <li><a href="#plotting-in-python" id="toc-plotting-in-python" class="nav-link active" data-scroll-target="#plotting-in-python"><span class="header-section-number">14</span> Plotting in Python</a>
+  <ul class="collapse">
+  <li><a href="#the-plot-function" id="toc-the-plot-function" class="nav-link" data-scroll-target="#the-plot-function"><span class="header-section-number">14.1</span> The Plot-Function</a></li>
+  <li><a href="#histograms-and-kernel-densities" id="toc-histograms-and-kernel-densities" class="nav-link" data-scroll-target="#histograms-and-kernel-densities"><span class="header-section-number">14.2</span> Histograms and Kernel Densities</a></li>
+  <li><a href="#exercises-v" id="toc-exercises-v" class="nav-link" data-scroll-target="#exercises-v"><span class="header-section-number">14.3</span> Exercises V</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-05-Plotting.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Python-01-Getting-Started.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="./Python-05-Plotting.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">jupyter: python3</span></h1>
 </div>
 
 
@@ -340,18 +357,22 @@ window.Quarto = {
 </header>
 
 
+<!-- LTeX: language=en-US -->
+<hr>
+<section id="plotting-in-python" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Plotting in Python</h1>
 <p>It is often useful to visualize data by using plots. Python offers many different possibilities to create plots, ranging from simple scatterplots to animated plots, that you can export as gifs or even interactive webapps. The standard plotting package in Python is <strong>matplotlib</strong>, which offers many tools to quickly generate plots. Packages like <strong>seaborn</strong>, which is built on top of matplotlib, offer a more convenient interface for statistical plots based on data frames.</p>
 <p>We load matplotlib’s plotting module under its usual short name <code>plt</code>:</p>
-<div id="a418ed6d" class="cell" data-execution_count="1">
+<div id="20feaae8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="the-plot-function" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="the-plot-function"><span class="header-section-number">13.1</span> The plot-function</h2>
+<section id="the-plot-function" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="the-plot-function"><span class="header-section-number">14.1</span> The Plot-Function</h2>
 <p>In its simplest form, the <code>plt.scatter()</code> function delivers a scatterplot.</p>
-<div id="2084b902" class="cell" data-execution_count="2">
+<div id="43343c3a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">51</span>)   <span class="co"># 51 equally spaced values from 0 to 5</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> rng.normal(size <span class="op">=</span> <span class="bu">len</span>(x))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y)</span>
@@ -365,7 +386,7 @@ window.Quarto = {
 </div>
 </div>
 <p>If we instead want a simple line plot or a combination of both, we can use the <code>plt.plot()</code> function, where the third argument (the <em>format string</em>) specifies this behavior (<code>"-"</code> for lines, <code>"o"</code> for points, and <code>"o-"</code> for both).</p>
-<div id="e47d53fe" class="cell" data-execution_count="3">
+<div id="0f298ad7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> rng.normal(size <span class="op">=</span> <span class="dv">51</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, z, <span class="st">"-"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -377,7 +398,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="3e949ca2" class="cell" data-execution_count="4">
+<div id="2c0e26ab" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x, z, <span class="st">"o-"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -390,7 +411,7 @@ window.Quarto = {
 </div>
 <p>Other arguments to the <code>plt.plot()</code> function can be used to specify color, linestyle (dashed etc.), linewidth, title, subtitle and many more. The help file <code>help(plt.plot)</code> and the <a href="https://matplotlib.org/stable/">matplotlib documentation</a> can be very helpful when trying to achieve a specific look for your plot.</p>
 <p>An example could look a little like this:</p>
-<div id="01a860c7" class="cell" data-execution_count="5">
+<div id="9101a913" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, linestyle <span class="op">=</span> <span class="st">"-."</span>, linewidth <span class="op">=</span> <span class="dv">2</span>, color <span class="op">=</span> <span class="st">"green"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Testplot"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -403,7 +424,7 @@ window.Quarto = {
 </div>
 </div>
 <p>If we want to show multiple things in one diagram it can be useful to plot multiple objects in one coordinate grid. In matplotlib, all plotting commands before <code>plt.show()</code> are drawn into the same figure. The function <code>plt.axline()</code> can be used to add straight lines.</p>
-<div id="ae8d6419" class="cell" data-execution_count="6">
+<div id="cd5469a4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, color <span class="op">=</span> <span class="st">"green"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, z, linewidth <span class="op">=</span> <span class="dv">2</span>, linestyle <span class="op">=</span> <span class="st">"-."</span>, color <span class="op">=</span> <span class="st">"red"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.axline((<span class="dv">0</span>, <span class="dv">0</span>), slope <span class="op">=</span> <span class="fl">0.5</span>, color <span class="op">=</span> <span class="st">"blue"</span>)</span>
@@ -417,7 +438,7 @@ window.Quarto = {
 </div>
 </div>
 <p>In contrast to R, matplotlib adjusts the range of the axes automatically to all plotted objects. But we can also manually adjust the range of our axes if we choose to do so. This is done using the functions <code>plt.xlim()</code> and <code>plt.ylim()</code>.</p>
-<div id="d7c6ceec" class="cell" data-execution_count="7">
+<div id="56770a57" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, color <span class="op">=</span> <span class="st">"green"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, z, linewidth <span class="op">=</span> <span class="dv">2</span>, linestyle <span class="op">=</span> <span class="st">"-."</span>, color <span class="op">=</span> <span class="st">"red"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.axline((<span class="dv">0</span>, <span class="dv">0</span>), slope <span class="op">=</span> <span class="fl">0.5</span>, color <span class="op">=</span> <span class="st">"blue"</span>)</span>
@@ -433,7 +454,7 @@ window.Quarto = {
 </div>
 </div>
 <p>To plot functions like <span class="math inline">\(\sin(x)\)</span> or the standard normal density, we evaluate them on a fine grid of x-values. The standard normal density is provided by the module <code>scipy.stats</code>.</p>
-<div id="ba723c93" class="cell" data-execution_count="8">
+<div id="975086c1" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">200</span>)</span>
@@ -460,10 +481,10 @@ window.Quarto = {
 </div>
 <p>There are many other useful plotting functions in matplotlib. We won’t cover all of them here, but instead focus on some of the most frequently needed.</p>
 </section>
-<section id="histograms-and-kernel-densities" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="histograms-and-kernel-densities"><span class="header-section-number">13.2</span> Histograms and kernel densities</h2>
+<section id="histograms-and-kernel-densities" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="histograms-and-kernel-densities"><span class="header-section-number">14.2</span> Histograms and Kernel Densities</h2>
 <p>Other useful plotting functions include histograms with the function <code>plt.hist()</code>. With the function <code>gaussian_kde()</code> from <code>scipy.stats</code> we get access to kernel density estimates. A kernel density estimator is a nonparametric estimator of density of random variable based on a sample. Details about the estimator are beyond the scope of these notes. In the settings where we will use them, the default choices of the estimator will yield accurate results. Combining our previous knowledge with these possibilities, we can create plots like the following (note: in <code>plt.hist()</code> the argument <code>density = True</code> leads to relative frequency instead of counts. See <code>help(plt.hist)</code> for more details.):</p>
-<div id="2a038817" class="cell" data-execution_count="9">
+<div id="cd8a4372" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> gaussian_kde</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> rng.normal(size <span class="op">=</span> <span class="dv">20</span>)</span>
@@ -485,7 +506,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Further functions include barplots:</p>
-<div id="ff59f9b1" class="cell" data-execution_count="10">
+<div id="372000cf" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="dv">17</span>,<span class="dv">23</span>,<span class="dv">18</span>,<span class="dv">30</span>,<span class="dv">32</span>,<span class="dv">16</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.bar(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">9</span>), temperatures)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">15</span>, <span class="dv">35</span>)</span>
@@ -501,7 +522,7 @@ window.Quarto = {
 </div>
 </div>
 <p>and piecharts:</p>
-<div id="0d7f67f2" class="cell" data-execution_count="11">
+<div id="3cb1327b" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>slices <span class="op">=</span> [<span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">4</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">"Apple"</span>, <span class="st">"Pumpkin"</span>, <span class="st">"Pork"</span>, <span class="st">"3.14"</span>, <span class="st">"American"</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.pie(slices, labels <span class="op">=</span> labels)</span>
@@ -516,7 +537,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Another important part of plots - like comments in code - is a legible legend. Matplotlib has built-in support for adding a legend to your plots. Going back to our combined plot from above, one can add a legend as shown in the following example. Here, the <code>label</code> arguments specify the contents of the legend and the <code>loc</code> argument of <code>plt.legend()</code> specifies its position in the plot. Since a legend has to be customized for each plot, one should have a look in the documentation <code>help(plt.legend)</code>.</p>
-<div id="66af5211" class="cell" data-execution_count="12">
+<div id="eed2b6e4" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">51</span>)   <span class="co"># 51 equally spaced values from 0 to 5</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> rng.normal(size <span class="op">=</span> <span class="bu">len</span>(x))</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> rng.normal(size <span class="op">=</span> <span class="dv">51</span>)</span>
@@ -536,7 +557,7 @@ window.Quarto = {
 </div>
 </div>
 <p>If one decides to work with data frames, the package seaborn allows for beautiful, heavily customized plots. An example can be seen below:</p>
-<div id="38f94abc" class="cell" data-execution_count="13">
+<div id="9565641b" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -565,8 +586,8 @@ window.Quarto = {
 </div>
 <p>The possibilities of matplotlib and seaborn are vast and can be intimidating, but seaborn offers a consistent plotting experience integrated into a data frame workflow using pandas. (If you like R’s ggplot2, have a look at the Python package <a href="https://plotnine.org/">plotnine</a>, which implements the “Grammar of Graphics” in Python.)</p>
 </section>
-<section id="exercises-v" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="exercises-v"><span class="header-section-number">13.3</span> Exercises V</h2>
+<section id="exercises-v" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="exercises-v"><span class="header-section-number">14.3</span> Exercises V</h2>
 <p><strong>Exercise 1:</strong></p>
 <p>Draw samples of size 1000 from exponential distributions with varying values of the parameter. Use histograms to visualize differences in the distributions.</p>
 <p><strong>Exercise 2:</strong></p>
@@ -575,6 +596,7 @@ window.Quarto = {
 <p>Write a function that takes as its arguments a sample size n and a boolean that indicates, if plotting should take place. Let this function return a sample of size n drawn from a standard normal. If the plotting argument was true, let it also plot your sample in a way that seems sensible to you.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1144,13 +1166,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Python-04-Functions.html" class="pagination-link" aria-label="Functions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span>
+      <a href="./Python-04-Functions.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Python-06-Monte-Carlo-Simulations.html" class="pagination-link" aria-label="Monte Carlo simulations">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Python-06-Monte-Carlo-Simulations.html" class="pagination-link" aria-label="<!-- LTeX: language=en-US -->">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

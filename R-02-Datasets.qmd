@@ -1,8 +1,9 @@
-# Create and load data sets
+<!-- LTeX: language=en-US -->
+# Create and Load Data Sets
 
 We will use R to analyze both simulate and real data. Simulated data will be crucial to study small sample properties of estimators. 
 
-## Simulated data 
+## Simulated Data
 
 We start by considering data that is simulated by the user. We can create data sets by using functions like `rnorm()`, `rexp()` or `runif()`. After the data is created we can work with it as shown in the following example: 
 ```{r, error = TRUE }
@@ -27,7 +28,7 @@ Analogous functions exist for many other distributions in R, and you can find th
 
 
 
-## Load datasets
+## Load Datasets
 
 It is also possible to work with observed data, which will be loaded into R. Here, we will use some real data, namely a movie database from IMDB that you can download [here](https://www.kaggle.com/tmdb/tmdb-movie-metadata#). The data set contains, among others, the budget, the revenue, and the average rating of movies.
 
@@ -50,7 +51,7 @@ Apart from `read.csv` there exist also `read.dta`, `read.xls` and many more to l
 
 Another important function is `readRDS` that is used to read in a data set that was saved using the function `saveRDS`. These functions can be useful in case properties of your R object are not preserved when saved in other formats, such as a csv file.
 
-## Save datasets
+## Save Datasets
 
 There are also  multiple ways to save your own data. 
 While `read.csv` can be used to read in data from a csv file, its counterpart `write.csv` can be used to save a suitable object as a csv file. The most important arguments for this function are `x`, the object you want to save, and `file`, which provides the path where to save the file.

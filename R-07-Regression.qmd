@@ -1,9 +1,10 @@
-# Regression analysis
+<!-- LTeX: language=en-US -->
+# Regression Analysis
 
 
 {{< include _regression-model.qmd >}}
 
-## Empirical example
+## Empirical Example
 
 We will now see how to run regressions in R using the movie data set. Again, you can load it using
 ```{r}

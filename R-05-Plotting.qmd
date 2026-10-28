@@ -1,9 +1,10 @@
+<!-- LTeX: language=en-US -->
 # Plotting in R
 
 It is often useful to visualize data by using plots. R offers many different possibilities to create plots, ranging from simple scatterplots to animated plots, that you can export as gifs or even interactive webapps.
 The built-in capabilities of R offer many tools, to quickly generate plots and packages like ggplot2 from the tidyverse family offer a full plotting experience built on the so called "Grammar of Graphics".
 
-## The plot-function
+## The Plot-Function
 In its simplest form, the `plot` function in R delivers a scatterplot. In the call below, `type = "p"` could be omitted as it is the default value if the argument is not provided in the call. 
 ```{r}
 x <- seq(0, 5, 0.1)
@@ -51,7 +52,7 @@ plot(dnorm, xlim = c(-4, 4))
 
 There are many other useful plotting functions that are integrated in base R. We won't cover all of them here, but instead focus on some of the most frequently needed. 
 
-## Histograms and kernel densities
+## Histograms and Kernel Densities
 Other useful plotting functions that are offered in the default R experience include histograms with the function `hist`. With a combination of `plot` and `density` we get access to kernel density plots. A kernel density estimator is a nonparametric estimator of density of random variable based on a sample. Details about the estimator are beyond the scope of these notes. In the settings where we will use them, the default choices of the estimator will yield accurate results. Combining our previous knowledge with these possibilities, we can create plots like the following (note: in `hist` the argument `freq = FALSE` leads to relative frequency instead of counts. See `?hist` for more details.):
 
 ```{r}

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>3&nbsp; Simple programming – Coding Intros</title>
+<title>3&nbsp; Simple Programming – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -107,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-03-Programming.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-03-Programming.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,19 +165,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -182,19 +195,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,49 +224,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -266,17 +279,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#the-for-loop" id="toc-the-for-loop" class="nav-link active" data-scroll-target="#the-for-loop"><span class="header-section-number">3.1</span> The for-loop</a></li>
-  <li><a href="#the-if-condition" id="toc-the-if-condition" class="nav-link" data-scroll-target="#the-if-condition"><span class="header-section-number">3.2</span> The if-condition</a></li>
-  <li><a href="#the-while-loop" id="toc-the-while-loop" class="nav-link" data-scroll-target="#the-while-loop"><span class="header-section-number">3.3</span> The while-loop</a></li>
-  <li><a href="#time-saving-and-loops" id="toc-time-saving-and-loops" class="nav-link" data-scroll-target="#time-saving-and-loops"><span class="header-section-number">3.4</span> Time saving and loops</a></li>
+<li><a href="#the-for-loop" id="toc-the-for-loop" class="nav-link active" data-scroll-target="#the-for-loop"><span class="header-section-number">3.1</span> The For-Loop</a></li>
+  <li><a href="#the-if-condition" id="toc-the-if-condition" class="nav-link" data-scroll-target="#the-if-condition"><span class="header-section-number">3.2</span> The If-Condition</a></li>
+  <li><a href="#the-while-loop" id="toc-the-while-loop" class="nav-link" data-scroll-target="#the-while-loop"><span class="header-section-number">3.3</span> The While-Loop</a></li>
+  <li><a href="#time-saving-and-loops" id="toc-time-saving-and-loops" class="nav-link" data-scroll-target="#time-saving-and-loops"><span class="header-section-number">3.4</span> Time Saving and Loops</a></li>
   <li><a href="#exercises-iii" id="toc-exercises-iii" class="nav-link" data-scroll-target="#exercises-iii"><span class="header-section-number">3.5</span> Exercises III</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-03-Programming.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-03-Programming.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span>
+<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span>
 </h1>
 </div>
 
@@ -291,9 +304,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>We often want to repeat specific operations several times. For example, we might want to repeat an operation for different elements of a given data structure, such as columns of a matrix, or perform an operation until a satisfactory result is reached, such as running an algorithm until the value converges to a prespecified level. In addition, we often need to check whether certain conditions are fulfilled, such as whether elements of a vector are equal to 0, and perform an operation depending on the result.</p>
+</header><!-- LTeX: language=en-US --><p>We often want to repeat specific operations several times. For example, we might want to repeat an operation for different elements of a given data structure, such as columns of a matrix, or perform an operation until a satisfactory result is reached, such as running an algorithm until the value converges to a prespecified level. In addition, we often need to check whether certain conditions are fulfilled, such as whether elements of a vector are equal to 0, and perform an operation depending on the result.</p>
 <section id="the-for-loop" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="the-for-loop">
-<span class="header-section-number">3.1</span> The for-loop</h2>
+<span class="header-section-number">3.1</span> The For-Loop</h2>
 <p>A for-loop is a procedure in which a particular routine is repeated and only an index variable is changed.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span><span class="op">=</span><span class="fl">0</span></span>
@@ -317,11 +330,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.001745115</code></pre>
+<pre><code>[1] -0.002921546</code></pre>
 </div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2184134</code></pre>
+<pre><code>[1] 0.2265563</code></pre>
 </div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">out</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span></span>
 <span><span class="va">n</span> <span class="op">=</span> <span class="fl">200</span></span>
@@ -331,15 +344,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.01003457</code></pre>
+<pre><code>[1] 0.0007571941</code></pre>
 </div>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.07099693</code></pre>
+<pre><code>[1] 0.06248292</code></pre>
 </div>
 </div>
 </section><section id="the-if-condition" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="the-if-condition">
-<span class="header-section-number">3.2</span> The if-condition</h2>
+<span class="header-section-number">3.2</span> The If-Condition</h2>
 <p>Within a for-loop, it may be useful to perform arithmetic operations only under certain conditions. The basic syntax for this is</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition){</span>
@@ -370,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">test</span>, <span class="va">yes</span>, <span class="va">no</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="the-while-loop" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="the-while-loop">
-<span class="header-section-number">3.3</span> The while-loop</h2>
+<span class="header-section-number">3.3</span> The While-Loop</h2>
 <p>The while-loop performs a program (“statement”) as long as certain data conditions (“test expression”) are met. The basic syntax is</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">while</span> <span class="op">(</span><span class="va">testexpression</span><span class="op">)</span></span>
@@ -396,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section><section id="time-saving-and-loops" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="time-saving-and-loops">
-<span class="header-section-number">3.4</span> Time saving and loops</h2>
+<span class="header-section-number">3.4</span> Time Saving and Loops</h2>
 <p>One easy way to make your loops in R faster is to preallocate space for your results instead of appending them to a vector. This is caused by the underlying architectural choice of R that is called copy-on-modify. In some cases it leads to your whole data being copied from one place in memory to another, when you simply wanted to append another value to your vector.</p>
 <p>If you look at the following code fragments, the second one is about 70 to 80 times faster!</p>
 <div class="cell" data-layout-align="center">
@@ -410,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 16.019   0.339  16.375 </code></pre>
+ 12.661   0.295  12.960 </code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -424,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">time2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-  0.104   0.000   0.104 </code></pre>
+  0.097   0.000   0.097 </code></pre>
 </div>
 </div>
 <p>If you can avoid a loop altogether and use vector operations instead, your code will will be even faster.</p>
@@ -1015,8 +1028,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./R-02-Datasets.html" class="pagination-link" aria-label="Create and load data sets">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span>
+      <a href="./R-02-Datasets.html" class="pagination-link" aria-label="Create and Load Data Sets">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

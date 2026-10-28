@@ -1,3 +1,4 @@
+<!-- LTeX: language=en-US -->
 ---
 jupyter: python3
 ---
@@ -15,7 +16,7 @@ import matplotlib.pyplot as plt
 rng = np.random.default_rng()
 ```
 
-## The plot-function
+## The Plot-Function
 In its simplest form, the `plt.scatter()` function delivers a scatterplot.
 ```{python}
 x = np.linspace(0, 5, 51)   # 51 equally spaced values from 0 to 5
@@ -78,7 +79,7 @@ plt.show()
 
 There are many other useful plotting functions in matplotlib. We won't cover all of them here, but instead focus on some of the most frequently needed.
 
-## Histograms and kernel densities
+## Histograms and Kernel Densities
 Other useful plotting functions include histograms with the function `plt.hist()`. With the function `gaussian_kde()` from `scipy.stats` we get access to kernel density estimates. A kernel density estimator is a nonparametric estimator of density of random variable based on a sample. Details about the estimator are beyond the scope of these notes. In the settings where we will use them, the default choices of the estimator will yield accurate results. Combining our previous knowledge with these possibilities, we can create plots like the following (note: in `plt.hist()` the argument `density = True` leads to relative frequency instead of counts. See `help(plt.hist)` for more details.):
 
 ```{python}

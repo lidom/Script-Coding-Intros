@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>1&nbsp; The first steps in R – Coding Intros</title>
+<title>1&nbsp; The First Steps in R – Coding Intros</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script><script type="text/javascript">
+}</script><script type="text/x-mathjax-config">
+// Independence symbol (double perp) for MathJax 2.7.9 (TeX-MML-AM_CHTML).
+// Equivalent to the \independent macro in pdf-header.tex, simplified because
+// MathJax 2.7.9's core TeX processor does not implement \mathpalette or
+// \protect (only \rlap, \mkern and \mathrel, which this still uses).
+// Based on: https://tex.stackexchange.com/q/79434 (CC BY-SA 3.0)
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+      independent: "\\mathrel{\\rlap{\\perp}\\mkern2mu{\\perp}}"
+    }
+  }
+});
+</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -132,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -177,19 +190,19 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-01-Getting-Started.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simple Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,19 +220,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regression Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Some Notes on Useful Packages</span></span></a>
   </div>
 </li>
       </ul>
@@ -236,49 +249,49 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-01-Getting-Started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The first steps in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-02-Datasets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-03-Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-04-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-05-Plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Plotting in Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-06-Monte-Carlo-Simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo simulations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-07-Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Regression analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Python-08-Notes-on-useful-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Some notes on useful packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><!-- LTeX: language=en-US --></span></span></a>
   </div>
 </li>
       </ul>
@@ -291,20 +304,20 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#positron-for-the-first-time" id="toc-positron-for-the-first-time" class="nav-link active" data-scroll-target="#positron-for-the-first-time"><span class="header-section-number">1.1</span> Positron for the first time</a></li>
-  <li><a href="#simple-calculations" id="toc-simple-calculations" class="nav-link" data-scroll-target="#simple-calculations"><span class="header-section-number">1.2</span> Simple calculations</a></li>
-  <li><a href="#assigments-and-matrix-algebra" id="toc-assigments-and-matrix-algebra" class="nav-link" data-scroll-target="#assigments-and-matrix-algebra"><span class="header-section-number">1.3</span> Assigments and matrix algebra</a></li>
+<li><a href="#positron-for-the-first-time" id="toc-positron-for-the-first-time" class="nav-link active" data-scroll-target="#positron-for-the-first-time"><span class="header-section-number">1.1</span> Positron for the First Time</a></li>
+  <li><a href="#simple-calculations" id="toc-simple-calculations" class="nav-link" data-scroll-target="#simple-calculations"><span class="header-section-number">1.2</span> Simple Calculations</a></li>
+  <li><a href="#assigments-and-matrix-algebra" id="toc-assigments-and-matrix-algebra" class="nav-link" data-scroll-target="#assigments-and-matrix-algebra"><span class="header-section-number">1.3</span> Assigments and Matrix Algebra</a></li>
   <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators"><span class="header-section-number">1.4</span> Operators</a></li>
-  <li><a href="#further-data-objects" id="toc-further-data-objects" class="nav-link" data-scroll-target="#further-data-objects"><span class="header-section-number">1.5</span> Further data objects</a></li>
-  <li><a href="#r-help" id="toc-r-help" class="nav-link" data-scroll-target="#r-help"><span class="header-section-number">1.6</span> R help</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">1.7</span> R packages</a></li>
+  <li><a href="#further-data-objects" id="toc-further-data-objects" class="nav-link" data-scroll-target="#further-data-objects"><span class="header-section-number">1.5</span> Further Data Objects</a></li>
+  <li><a href="#r-help" id="toc-r-help" class="nav-link" data-scroll-target="#r-help"><span class="header-section-number">1.6</span> R Help</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">1.7</span> R Packages</a></li>
   <li><a href="#exercises-i" id="toc-exercises-i" class="nav-link" data-scroll-target="#exercises-i"><span class="header-section-number">1.8</span> Exercises I</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./R-01-Getting-Started.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first steps in R</span>
+<span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The First Steps in R</span>
 </h1>
 </div>
 
@@ -319,8 +332,8 @@ window.Quarto = {
   
 
 
-</header><section id="positron-for-the-first-time" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="positron-for-the-first-time">
-<span class="header-section-number">1.1</span> Positron for the first time</h2>
+</header><!-- LTeX: language=en-US --><section id="positron-for-the-first-time" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="positron-for-the-first-time">
+<span class="header-section-number">1.1</span> Positron for the First Time</h2>
 <p>I highly recommend to install Positron. For installation just follow the instructions on<br><a href="https://positron.posit.co/download.html">https://positron.posit.co/download.html</a></p>
 <p>When you open Positron, its window is typically split into the following areas:</p>
 <!-- TODO: add a screenshot of Positron, e.g. ![Illustration of Positron](images/positron.png) -->
@@ -336,7 +349,7 @@ window.Quarto = {
 <li>Working directory: The file-directory you are working in. Useful commands: with <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> you get the location of your current working directory and <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> allows you to set a new location for it. This is very useful when you would like to load or save several files. You can just set your working directory globally and all files can be loaded or will be saved into this directory.</li>
 <li>Workspace: This is a hidden file (stored in the working directory), where all objects you use (e.g., data, matrices, vectors, variables, functions, etc.) are stored. Useful commands: <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> shows all elements in our current workspace and <code>rm(list=ls())</code> deletes all elements in our current workspace. It is also possible to remove only some objects with <code>rm(object1, object2)</code>.</li>
 </ul></section><section id="simple-calculations" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="simple-calculations">
-<span class="header-section-number">1.2</span> Simple calculations</h2>
+<span class="header-section-number">1.2</span> Simple Calculations</h2>
 <p>We start with a very basic calculation. Let’s type <code>1+1</code> into the console window and press enter. We get</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span> <span class="fl">1</span><span class="op">+</span><span class="fl">1</span> <span class="co"># first calculation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -373,7 +386,7 @@ window.Quarto = {
 </div>
 <p>It will be helpful to use a script file, such as <code>yourFavoritFileName.R</code>, to store your R commands. Otherwise, you would have to type your code again when an error occurred. You can send single lines or marked regions of your R-code to the console by pressing the keys <strong>STRG+ENTER</strong>.</p>
 </section><section id="assigments-and-matrix-algebra" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="assigments-and-matrix-algebra">
-<span class="header-section-number">1.3</span> Assigments and matrix algebra</h2>
+<span class="header-section-number">1.3</span> Assigments and Matrix Algebra</h2>
 <p>The <strong>assignment</strong> operator will be your most often used tool. Here is an example where a <strong>scalar</strong> variable is created:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">9</span></span>
@@ -670,7 +683,7 @@ window.Quarto = {
 </div>
 <p>is interpreted as <span class="math inline">\(1.224606 \times 10^{-16}\)</span>. This is often exactly zero, but for internal memory purposes (R uses double-precision floating-point numbers and therefore only has up to 16 decimals), can be a rounding mistake.</p>
 </section><section id="further-data-objects" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="further-data-objects">
-<span class="header-section-number">1.5</span> Further data objects</h2>
+<span class="header-section-number">1.5</span> Further Data Objects</h2>
 <p>Besides classical data objects such as scalars, vectors, and matrices there are three further data objects in R:</p>
 <p>1.The <strong>array</strong>: A matrix but with more dimensions. Here is an example of a 2×2×2-dimensional array</p>
 <div class="cell" data-layout-align="center">
@@ -693,7 +706,7 @@ window.Quarto = {
 <span>                                <span class="st">"Loan_in_1000_EUR"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">55</span>,<span class="fl">65</span>,<span class="fl">23</span>,<span class="fl">12</span>,<span class="fl">98</span>,<span class="fl">76</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="r-help" class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" data-anchor-id="r-help">
-<span class="header-section-number">1.6</span> R help</h2>
+<span class="header-section-number">1.6</span> R Help</h2>
 <p>There exist help files for all commands in R. For example consider the help file of the function <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>. You can access the help file with</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode" id="cb81"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="va">sum</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -717,7 +730,7 @@ window.Quarto = {
 </div>
 <p>Details describes the exact calculation (trivial in this case), and some command specific characteristics. Value describes what is returned, in the case of <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> it is obviously a sum of numbers, given that numeric data was used as an input.</p>
 </section><section id="r-packages" class="level2" data-number="1.7"><h2 data-number="1.7" class="anchored" data-anchor-id="r-packages">
-<span class="header-section-number">1.7</span> R packages</h2>
+<span class="header-section-number">1.7</span> R Packages</h2>
 <p>There are tons of R packages that are useful for different aspects of data analysis. Some packages that can help you make beautiful plots and that you might want check out are the package <code>ggplot2</code> and the collection of packages <code>tidyverse</code>. You can install the packages with <code>install.packages(packagename)</code>. In order to use the package type <code><a href="https://rdrr.io/r/base/library.html">library(package)</a></code>. The package has to be installed only once, but you have to load the package with <code><a href="https://rdrr.io/r/base/library.html">library(package)</a></code> every time you want to use it.</p>
 </section><section id="exercises-i" class="level2" data-number="1.8"><h2 data-number="1.8" class="anchored" data-anchor-id="exercises-i">
 <span class="header-section-number">1.8</span> Exercises I</h2>
@@ -1349,8 +1362,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./R-02-Datasets.html" class="pagination-link" aria-label="Create and load data sets">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and load data sets</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./R-02-Datasets.html" class="pagination-link" aria-label="Create and Load Data Sets">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Create and Load Data Sets</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

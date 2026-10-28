@@ -1,12 +1,13 @@
+<!-- LTeX: language=en-US -->
 ---
 jupyter: python3
 ---
 
-# Create and load data sets
+# Create and Load Data Sets
 
 We will use Python to analyze both simulate and real data. Simulated data will be crucial to study small sample properties of estimators.
 
-## Simulated data
+## Simulated Data
 
 We start by considering data that is simulated by the user. In NumPy, random numbers are drawn from a *random number generator*, which we create with `np.random.default_rng()`. We can then create data sets by using its methods like `normal()`, `exponential()` or `uniform()`. After the data is created we can work with it as shown in the following example:
 ```{python}
@@ -35,7 +36,7 @@ Analogous functions exist for many other distributions, and you can find them in
 
 
 
-## Load datasets
+## Load Datasets
 
 It is also possible to work with observed data, which will be loaded into Python. Here, we will use some real data, namely a movie database from IMDB that you can download [here](https://www.kaggle.com/tmdb/tmdb-movie-metadata#). The data set contains, among others, the budget, the revenue, and the average rating of movies.
 
@@ -60,7 +61,7 @@ Apart from `pd.read_csv` there exist also `pd.read_stata`, `pd.read_excel` and m
 
 Another important function is `pd.read_pickle` that is used to read in a data set that was saved using the method `to_pickle`. These functions can be useful in case properties of your Python object are not preserved when saved in other formats, such as a csv file. (Only read pickle files from sources you trust, since they can contain executable code.)
 
-## Save datasets
+## Save Datasets
 
 There are also  multiple ways to save your own data.
 While `pd.read_csv` can be used to read in data from a csv file, its counterpart, the data frame method `to_csv`, can be used to save a data frame as a csv file. The most important arguments of this method are `path_or_buf`, which provides the path where to save the file, and `index`, which specifies whether the row names should be saved as well.
