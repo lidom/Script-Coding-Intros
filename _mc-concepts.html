@@ -412,30 +412,68 @@ E\left(\hat{\theta}_n\right) \to \theta\quad\text{as}\quad n\to\infty.
 </div>
 </div>
 <p>That is, the realizations of a consistent estimator <span class="math inline">\(\hat{\theta}_n\)</span> concentrate around the true parameter value <span class="math inline">\(\theta\)</span> for large sample sizes <span class="math inline">\((n \to\infty).\)</span></p>
+<p>To check whether an estimator is consistent, we only need to check whether the estimator is asymptotically unbiased <span class="math display">\[
+E\left(\hat{\theta}_n\right) \to \theta\quad\text{as}\quad n\to\infty
+\]</span> and whether its variance vanishes <span class="math display">\[
+\operatorname{Var}(\hat\theta_n)=E\left(\left(\hat\theta_n - E(\hat\theta_n)\right)^2\right)\to 0\quad\text{as}\quad n\to\infty.
+\]</span></p>
+<p>For a proof on this, you can take a look at the following box.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 🤓 Nerd’s Box: A Sufficient Condition for Consistency
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>An estimator <span class="math inline">\(\hat\theta_n\)</span> that is asymptotically unbiased and whose variance vanishes, i.e., <span class="math display">\[
 E\left(\hat\theta_n\right) \to \theta \quad\text{and}\quad \operatorname{Var}\left(\hat\theta_n\right) \to 0 \quad\text{as}\quad n \to \infty,
 \]</span> is (weakly) consistent.</p>
-<p><strong>Proof.</strong> We use <strong>Chebyshev’s inequality</strong>: For any random variable <span class="math inline">\(Z\)</span> with finite variance and any <span class="math inline">\(c &gt; 0\)</span>, <span class="math display">\[
-P\left(\left|Z - E(Z)\right| &gt; c\right) \leq \frac{\operatorname{Var}(Z)}{c^2}.
-\]</span></p>
-<p>Let <span class="math inline">\(\varepsilon &gt; 0\)</span>. By the triangle inequality, <span class="math display">\[
-\left|\hat\theta_n - \theta\right| \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \left|E\left(\hat\theta_n\right) - \theta\right|.
-\]</span> Since <span class="math inline">\(E(\hat\theta_n) \to \theta\)</span>, there is an <span class="math inline">\(n_0\)</span> such that <span class="math inline">\(|E(\hat\theta_n) - \theta| \leq \varepsilon/2\)</span> for all <span class="math inline">\(n \geq n_0\)</span>. For these <span class="math inline">\(n\)</span>, the event <span class="math inline">\(|\hat\theta_n - \theta| &gt; \varepsilon\)</span> implies the event <span class="math inline">\(|\hat\theta_n - E(\hat\theta_n)| &gt; \varepsilon/2\)</span>. Thus, Chebyshev’s inequality with <span class="math inline">\(Z = \hat\theta_n\)</span> and <span class="math inline">\(c = \varepsilon/2\)</span> yields <span class="math display">\[
+<p><strong>Proof.</strong> We use <strong>Chebyshev’s inequality</strong>: <span class="math display">\[
+P\left(\left|Z - E(Z)\right| &gt; c\right) \leq \frac{\operatorname{Var}(Z)}{c^2},
+\]</span> for any random variable <span class="math inline">\(Z\)</span> with finite variance and any <span class="math inline">\(c &gt; 0.\)</span></p>
+<p>We want to show that <span class="math display">\[\begin{align*}
+&amp;P\left(\left|\hat{\theta}_n - \theta\right| &gt; \varepsilon\right) \rightarrow 0 \quad\text{as}\quad n \to \infty.
+\end{align*}\]</span></p>
+<p>We start by considering <span class="math inline">\(\left|\hat\theta_n - \theta\right|\)</span> and adding a zero <span class="math inline">\(0=-E\left(\hat\theta_n\right)+E\left(\hat\theta_n\right)\colon\)</span> <span class="math display">\[\begin{align*}
+\left|\hat\theta_n - \theta\right|
+&amp; = \left|\hat\theta_n -E\left(\hat\theta_n\right)+E\left(\hat\theta_n\right) - \theta\right|
+\end{align*}\]</span></p>
+<p>The triangle inequality <span class="math inline">\((|a+b|\leq|a|+|b|)\)</span> yields: <span class="math display">\[\begin{align*}
+\left|\hat\theta_n - \theta\right|
+&amp; \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \left|E\left(\hat\theta_n\right) - \theta\right|.
+\end{align*}\]</span></p>
+<p>Let <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
+<p>Since <span class="math inline">\(E(\hat\theta_n) \to \theta,\)</span> which is equivalent to <span class="math inline">\(|E(\hat\theta_n)-\theta| \to 0,\)</span> there is an <span class="math inline">\(n_0\)</span> such that <span class="math inline">\(|E(\hat\theta_n) - \theta| \leq \varepsilon/2\)</span> for all <span class="math inline">\(n \geq n_0\)</span>.</p>
+<p>As we are anyway interested in large sample sizes <span class="math inline">\(n\to\infty,\)</span> we can continue with considering sufficiently large sample sizes <span class="math inline">\(n\geq n_0,\)</span> for which <span class="math display">\[\begin{align*}
+\left|\hat\theta_n - \theta\right|
+&amp; \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \frac{\varepsilon}{2}.
+\end{align*}\]</span></p>
+<p>Now suppose the event <span class="math inline">\(|\hat\theta_n - \theta| &gt; \varepsilon\)</span> occurs. Then, by the above inequality, <span class="math display">\[
+\varepsilon &lt; \left|\hat\theta_n - \theta\right| \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \frac{\varepsilon}{2}
+\quad\Rightarrow\quad
+\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| &gt; \frac{\varepsilon}{2}.
+\]</span> That is, whenever <span class="math inline">\(\hat\theta_n\)</span> deviates from <span class="math inline">\(\theta\)</span> by more than <span class="math inline">\(\varepsilon\)</span>, it deviates from its mean <span class="math inline">\(E(\hat\theta_n)\)</span> by more than <span class="math inline">\(\varepsilon/2\)</span>. Thus, the first event is contained in the second one, <span class="math display">\[
+\left\{\left|\hat\theta_n - \theta\right| &gt; \varepsilon\right\} \subseteq \left\{\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| &gt; \frac{\varepsilon}{2}\right\},
+\]</span> and therefore has a smaller (or equal) probability. Together with Chebyshev’s inequality for</p>
+<ul>
+<li><span class="math inline">\(Z = \hat\theta_n\)</span> and</li>
+<li><span class="math inline">\(c = \frac{\varepsilon}{2},\)</span></li>
+</ul>
+<p>this yields <span class="math display">\[
 P\left(\left|\hat\theta_n - \theta\right| &gt; \varepsilon\right)
 \leq P\left(\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| &gt; \frac{\varepsilon}{2}\right)
-\leq \frac{4 \operatorname{Var}\left(\hat\theta_n\right)}{\varepsilon^2}
-\to 0 \quad\text{as}\quad n \to \infty.
-\]</span> Since <span class="math inline">\(\varepsilon &gt; 0\)</span> was arbitrary, <span class="math inline">\(\hat\theta_n \rightarrow_P \theta\)</span>. <span class="math inline">\(\square\)</span></p>
+\leq \frac{\operatorname{Var}\left(\hat\theta_n\right)}{(\varepsilon/2)^2}
+= \frac{4 \operatorname{Var}\left(\hat\theta_n\right)}{\varepsilon^2}.
+\]</span> Since <span class="math inline">\(\operatorname{Var}(\hat\theta_n) \to 0\)</span>, the right-hand side, and thus <span class="math inline">\(P(|\hat\theta_n - \theta| &gt; \varepsilon)\)</span>, converges to zero as <span class="math inline">\(n \to \infty\)</span>.</p>
+<p>Thus, we can conclude that <span class="math display">\[
+P\left(\left|\hat\theta_n - \theta\right| &gt; \varepsilon\right)\rightarrow 0
+\]</span> as <span class="math inline">\(n\to\infty.\)</span></p>
+</div>
 </div>
 </div>
 <p>(Asymptotic) unbiasedness and consistency are the two minimum quality requirements we want any estimator to have.</p>

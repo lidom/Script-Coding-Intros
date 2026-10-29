@@ -373,7 +373,19 @@ $$
 
 That is, the realizations of a consistent estimator $\hat{\theta}_n$ concentrate around the true parameter value $\theta$ for large sample sizes $(n \to\infty).$ 
 
-::: {.callout-tip}
+
+To check whether an estimator is consistent, we only need to check whether the estimator is asymptotically unbiased
+$$
+E\left(\hat{\theta}_n\right) \to \theta\quad\text{as}\quad n\to\infty
+$$
+and whether its variance vanishes
+$$
+\operatorname{Var}(\hat\theta_n)=E\left(\left(\hat\theta_n - E(\hat\theta_n)\right)^2\right)\to 0\quad\text{as}\quad n\to\infty.
+$$
+
+For a proof on this, you can take a look at the following box. 
+
+::: {.callout-tip collapse="true"}
 ## 🤓 Nerd's Box: A Sufficient Condition for Consistency
 
 An estimator $\hat\theta_n$ that is asymptotically unbiased and whose variance vanishes, i.e.,
@@ -382,23 +394,71 @@ E\left(\hat\theta_n\right) \to \theta \quad\text{and}\quad \operatorname{Var}\le
 $$
 is (weakly) consistent.
 
-**Proof.** We use **Chebyshev's inequality**: For any random variable $Z$ with finite variance and any $c > 0$,
+**Proof.** We use **Chebyshev's inequality**: 
 $$
-P\left(\left|Z - E(Z)\right| > c\right) \leq \frac{\operatorname{Var}(Z)}{c^2}.
+P\left(\left|Z - E(Z)\right| > c\right) \leq \frac{\operatorname{Var}(Z)}{c^2},
 $$
+for any random variable $Z$ with finite variance and any $c > 0.$
 
-Let $\varepsilon > 0$. By the triangle inequality,
+We want to show that
+\begin{align*}
+&P\left(\left|\hat{\theta}_n - \theta\right| > \varepsilon\right) \rightarrow 0 \quad\text{as}\quad n \to \infty.
+\end{align*}
+
+We start by considering $\left|\hat\theta_n - \theta\right|$ and adding a zero $0=-E\left(\hat\theta_n\right)+E\left(\hat\theta_n\right)\colon$
+\begin{align*}
+\left|\hat\theta_n - \theta\right| 
+& = \left|\hat\theta_n -E\left(\hat\theta_n\right)+E\left(\hat\theta_n\right) - \theta\right| 
+\end{align*}
+
+The triangle inequality $(|a+b|\leq|a|+|b|)$ yields:
+\begin{align*}
+\left|\hat\theta_n - \theta\right| 
+& \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \left|E\left(\hat\theta_n\right) - \theta\right|.
+\end{align*}
+
+
+Let $\varepsilon > 0$. 
+
+Since $E(\hat\theta_n) \to \theta,$ which is equivalent to $|E(\hat\theta_n)-\theta| \to 0,$ there is an $n_0$ such that $|E(\hat\theta_n) - \theta| \leq \varepsilon/2$ for all $n \geq n_0$. 
+
+As we are anyway interested in large sample sizes $n\to\infty,$ we can continue with considering sufficiently large sample sizes $n\geq n_0,$ for which 
+\begin{align*}
+\left|\hat\theta_n - \theta\right| 
+& \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \frac{\varepsilon}{2}.
+\end{align*}
+
+
+Now suppose the event $|\hat\theta_n - \theta| > \varepsilon$ occurs. Then, by the above inequality,
 $$
-\left|\hat\theta_n - \theta\right| \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \left|E\left(\hat\theta_n\right) - \theta\right|.
+\varepsilon < \left|\hat\theta_n - \theta\right| \leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \frac{\varepsilon}{2}
+\quad\Rightarrow\quad
+\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| > \frac{\varepsilon}{2}.
 $$
-Since $E(\hat\theta_n) \to \theta$, there is an $n_0$ such that $|E(\hat\theta_n) - \theta| \leq \varepsilon/2$ for all $n \geq n_0$. For these $n$, the event $|\hat\theta_n - \theta| > \varepsilon$ implies the event $|\hat\theta_n - E(\hat\theta_n)| > \varepsilon/2$. Thus, Chebyshev's inequality with $Z = \hat\theta_n$ and $c = \varepsilon/2$ yields
+That is, whenever $\hat\theta_n$ deviates from $\theta$ by more than $\varepsilon$, it deviates from its mean $E(\hat\theta_n)$ by more than $\varepsilon/2$. Thus, the first event is contained in the second one,
+$$
+\left\{\left|\hat\theta_n - \theta\right| > \varepsilon\right\} \subseteq \left\{\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| > \frac{\varepsilon}{2}\right\},
+$$
+and therefore has a smaller (or equal) probability. Together with Chebyshev's inequality for 
+
+* $Z = \hat\theta_n$ and 
+* $c = \frac{\varepsilon}{2},$ 
+
+this yields
 $$
 P\left(\left|\hat\theta_n - \theta\right| > \varepsilon\right)
 \leq P\left(\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| > \frac{\varepsilon}{2}\right)
-\leq \frac{4 \operatorname{Var}\left(\hat\theta_n\right)}{\varepsilon^2}
-\to 0 \quad\text{as}\quad n \to \infty.
+\leq \frac{\operatorname{Var}\left(\hat\theta_n\right)}{(\varepsilon/2)^2}
+= \frac{4 \operatorname{Var}\left(\hat\theta_n\right)}{\varepsilon^2}.
 $$
-Since $\varepsilon > 0$ was arbitrary, $\hat\theta_n \rightarrow_P \theta$. $\square$
+Since $\operatorname{Var}(\hat\theta_n) \to 0$, the right-hand side, and thus $P(|\hat\theta_n - \theta| > \varepsilon)$, converges to zero as $n \to \infty$.
+
+
+Thus, we can conclude that 
+$$
+P\left(\left|\hat\theta_n - \theta\right| > \varepsilon\right)\rightarrow 0
+$$
+as $n\to\infty.$
 :::
 
 
