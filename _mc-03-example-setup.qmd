@@ -1,0 +1,160 @@
+<!-- LTeX: language=en-US -->
+## Simulation Example: The Sample Mean
+
+This example walks through a complete Monte Carlo simulation in five steps. Use it as a **blueprint** for your own simulations.
+
+
+### Step 1: Define the Estimator and the Questions
+
+Let 
+$$
+\{X_1, \ldots, X_n\}
+$$ 
+be an i.i.d. random sample with 
+$$
+X_i \sim F_X,
+$$ 
+and let 
+
+* $\mu = E(X)$ 
+* $\sigma^2 = \operatorname{Var}(X).$ 
+
+The parameter of interest is thus the mean, $\theta = \mu$. We estimate it by the **sample mean**
+$$
+\hat\mu_n = \bar X_n = \frac{1}{n}\sum_{i=1}^n X_i
+$$
+and construct the **asymptotic confidence interval** from above:
+$$
+\operatorname{CI}^{1-\alpha}_n = \left[\bar X_n - z_{1-\alpha/2}\frac{s_n}{\sqrt{n}},\; \bar X_n + z_{1-\alpha/2}\frac{s_n}{\sqrt{n}}\right],
+$$
+where 
+$$
+s_n = \sqrt{\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar X_n)^2}
+$$ 
+is the sample standard deviation, a consistent estimator of $\sigma = \sqrt{\operatorname{AVar}(\bar X_n)}$.
+
+::: {.callout-tip collapse="true"}
+## 🤓 Nerd's Box: The Asymptotic Variance of $\bar X_n$
+
+Since $X_1, \ldots, X_n$ are independent, the variance of their sum is the sum of their variances. Since they are identically distributed, $\operatorname{Var}(X_i) = \sigma^2$ for all $i$. Using $\operatorname{Var}(aZ) = a^2 \operatorname{Var}(Z)$, we get
+\begin{align*}
+\operatorname{Var}\left(\bar X_n\right)
+&= \operatorname{Var}\left(\frac{1}{n}\sum_{i=1}^n X_i\right)
+ = \frac{1}{n^2}\operatorname{Var}\left(\sum_{i=1}^n X_i\right)\\[2ex]
+&= \frac{1}{n^2}\sum_{i=1}^n \operatorname{Var}\left(X_i\right)
+ = \frac{1}{n^2}\, n\, \sigma^2
+ = \frac{\sigma^2}{n}.
+\end{align*}
+Thus, by the definition of the asymptotic variance,
+$$
+\operatorname{AVar}\left(\bar X_n\right)
+= \lim_{n\to\infty} n \operatorname{Var}\left(\bar X_n\right)
+= \lim_{n\to\infty} n \, \frac{\sigma^2}{n}
+= \sigma^2.
+$$
+Hence, $\sqrt{\operatorname{AVar}(\bar X_n)/n} = \sigma/\sqrt{n}$, which $\operatorname{CI}^{1-\alpha}_n$ estimates by $s_n/\sqrt{n}$.
+:::
+
+
+
+#### **What Does Theory Already Tell Us?** {-}
+
+For *any* $F_X$ with finite variance and *any* $n$,
+$$
+\operatorname{Bias}\left(\bar X_n\right) = 0
+$$
+and
+$$
+\operatorname{Var}\left(\bar X_n\right) = \operatorname{MSE}\left(\bar X_n\right) = \frac{\sigma^2}{n}.
+$$
+The coverage probability, however, is known only in the limit: 
+$$
+P(\mu \in \operatorname{CI}^{1-\alpha}_n) \to 1 - \alpha\quad\text{as}\quad n \to \infty.
+$$
+
+::: {.callout-tip collapse="true"}
+## 🤓 Nerd's Box: Derivations of Bias, Variance, MSE, and Coverage
+
+**Bias.** By the linearity of the expectation and $E(X_i) = \mu$ for all $i$,
+$$
+E\left(\bar X_n\right) = \frac{1}{n}\sum_{i=1}^n E\left(X_i\right) = \frac{1}{n}\, n\, \mu = \mu
+\quad\Rightarrow\quad
+\operatorname{Bias}\left(\bar X_n\right) = E\left(\bar X_n\right) - \mu = 0.
+$$
+
+**Variance.** As shown in the previous box (using independence),
+$$
+\operatorname{Var}\left(\bar X_n\right) = \frac{\sigma^2}{n}.
+$$
+
+**MSE.** By the bias–variance decomposition,
+$$
+\operatorname{MSE}\left(\bar X_n\right) = \left(\operatorname{Bias}\left(\bar X_n\right)\right)^2 + \operatorname{Var}\left(\bar X_n\right) = 0 + \frac{\sigma^2}{n} = \frac{\sigma^2}{n}.
+$$
+
+**Coverage probability.** The interval contains $\mu$ if and only if the $t$-statistic is small:
+$$
+\mu \in \operatorname{CI}^{1-\alpha}_n
+\quad\Leftrightarrow\quad
+\left|T_n\right| \leq z_{1-\alpha/2},
+\quad\text{where}\quad
+T_n = \frac{\sqrt{n}\left(\bar X_n - \mu\right)}{s_n}.
+$$
+Thus, $P(\mu \in \operatorname{CI}^{1-\alpha}_n) = P(|T_n| \leq z_{1-\alpha/2})$. As $n \to \infty$,
+
+::: {.spaced-list}
+* $\sqrt{n}(\bar X_n - \mu)/\sigma \rightarrow_D \mathcal{N}(0, 1)$ by the CLT, and
+
+* $s_n \rightarrow_P \sigma$ by the law of large numbers.
+:::
+
+Together (Slutsky's theorem), $T_n \rightarrow_D \mathcal{N}(0, 1)$. Therefore, as $n\to\infty,$
+$$
+P\left(\left|T_n\right| \leq z_{1-\alpha/2}\right)
+\to \Phi\left(z_{1-\alpha/2}\right) - \Phi\left(-z_{1-\alpha/2}\right)
+= \left(1 - \frac{\alpha}{2}\right) - \frac{\alpha}{2}
+= 1 - \alpha.
+$$
+
+**Why only in the limit?** For fixed $n$, the distribution of $T_n$ depends on the shape of $F_X$ and is typically unknown. 
+
+One exception is normal data: if $F_X = \mathcal{N}(\mu, \sigma^2)$, then $T_n$ follows a $t$-distribution with $n - 1$ degrees of freedom. Hence, the exact coverage is
+$$
+P\left(\mu \in \operatorname{CI}^{1-\alpha}_n\right) = 2\, F_{t_{n-1}}\left(z_{1-\alpha/2}\right) - 1 < 1 - \alpha,
+$$
+where $F_{t_{n-1}}$ denotes the distribution function of the $t_{n-1}$-distribution. For $\alpha = 0.05$, this gives $0.878$ for $n = 5$, $0.935$ for $n = 20$, and $0.947$ for $n = 100$. These values serve as a benchmark for the simulation results below. For skewed data such as $\chi^2_1$, no such formula is available, so we need a simulation.
+:::
+
+
+
+
+#### **Questions for the Simulation** {-}
+
+::: {.spaced-list}
+1. Do the Monte Carlo approximations of bias, variance, and MSE match the theory? (This is mainly a **sanity check** of our code.)
+
+2. How close is the actual coverage probability to $1 - \alpha$ for small $n$, and does it depend on the shape of $F_X$? (This is the **open question**.)
+:::
+
+
+### Step 2: Choose the Simulation Design
+
+We compare two distributions with the **same mean and variance** but different shapes:
+
+::: {.spaced-list}
+* **Symmetric:** $F_X = \mathcal{N}(1, 2)$.
+
+* **Right-skewed:** $F_X = \chi^2_1$, which also has $E(X) = 1$ and $\operatorname{Var}(X) = 2$.
+:::
+
+Thus, $\mu = 1$ and $\sigma^2 = 2$ in both cases. Any difference between the two cases is due to the **shape** of $F_X$ alone. The remaining design parameters are:
+
+::: {.spaced-list}
+* sample sizes $n \in \{5, 10, 20, 50, 100, 500\}$,
+
+* significance level $\alpha = 0.05$, i.e., a nominal coverage of $95\%$,
+
+* $B = 10{,}000$ Monte Carlo replications per design, and
+
+* a fixed seed for reproducibility.
+:::

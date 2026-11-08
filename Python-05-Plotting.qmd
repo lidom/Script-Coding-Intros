@@ -1,7 +1,7 @@
-<!-- LTeX: language=en-US -->
 ---
 jupyter: python3
 ---
+<!-- LTeX: language=en-US -->
 
 # Plotting in Python
 

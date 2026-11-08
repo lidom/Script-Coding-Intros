@@ -1,0 +1,77 @@
+<!-- LTeX: language=en-US -->
+## Some Important Concepts
+
+### Random Sample
+
+Let 
+$$
+\{X_1, X_2, \ldots, X_n\}
+$$
+denote an **(i.i.d.) random sample**, i.e., a collection of $n$ random variables that all have the same distribution $F_X$,
+$$
+X_i\sim F_X\quad\text{for all}\quad i=1,\dots,n,
+$$
+and that are independent of each other,
+$$
+X_i \independent X_j \quad \text{for all} \quad i \neq j.
+$$
+
+::: {.spaced-list}
+* The symbol $\independent$ means **independent of**.
+
+* The abbreviation **i.i.d.** stands for **independent and identically distributed**.
+:::
+
+:::: {.callout-note style="minimal"}
+## Examples: $F_X$ and Parameters of Interest $\theta$
+
+::: {.spaced-list}
+1. **Normal distribution:** $F_X = \mathcal{N}(\mu_X, \sigma_X^2)$
+   * $\theta = E(X) = \mu_X$, or
+   * $\theta = \operatorname{Var}(X) = \sigma^2_X$
+
+2. **Chi-squared distribution:** $F_X = \chi^2_{\operatorname{df}}$
+   * $\theta = E(X) = \operatorname{df}$, or
+   * $\theta = \operatorname{Var}(X) = 2\cdot \operatorname{df}$
+
+3. **A distribution without a name:** $F_X$ is some unnamed distribution (most distributions have no name)
+   * $\theta = E(X)$, or
+   * $\theta = \operatorname{Median}(X)$, or
+   * $\theta = p\text{-Quantile}(X)$
+
+4. **A multivariate distribution:** $F_{YX}$ is the joint distribution of $(Y, X^\top) \in \mathbb{R}^{K+1}$
+   * $\theta = \beta$, the coefficient vector of the regression model $Y_i = X_i^\top\beta + \varepsilon_i$
+:::
+::::
+
+
+### Estimator 
+
+
+To estimate the unknown parameter $\theta$, we use an **estimator**, which is simply a function of the random sample,
+$$
+\hat{\theta}_n \equiv \hat{\theta}(X_1, X_2, \ldots, X_n).
+$$
+
+Since estimators are functions of random variables, they are random variables themselves.
+
+🔊 Estimators are Random Variables❗
+
+Thus, to understand an estimator, we need to know its **statistical properties**, i.e., its distribution or, at least, its mean and variance.
+
+Observed data are just one **obs**erved realization of the random sample,
+$$
+\{X_{1,\operatorname{obs}}, X_{2,\operatorname{obs}}, \ldots, X_{n,\operatorname{obs}}\}.
+$$
+Each observed realization of the random sample yields a realization of the estimator,
+$$
+\hat{\theta}_{n,\operatorname{obs}} \equiv \hat{\theta}(X_{1,\operatorname{obs}}, X_{2,\operatorname{obs}}, \ldots, X_{n,\operatorname{obs}}).
+$$
+
+This can be confusing: in practice, we typically have only one data set and, therefore, only one realization of the estimator. Still, we should keep in mind all the other data sets we could have obtained.
+
+
+<!-- For example, consider your starting salaries after graduation. Let $\theta$ be the **expected starting salary**, which is a fixed number that we do not know. After everyone started working, and we see your actual starting salaries, we can calculate the sample average as an estimate of the expected value. But this estimate is just one possible realization out of infinitely many others. If we had asked a different cohort of former students, we would have received similar, but different starting salaries. That is, we would have seen a different realization of the (sample average) estimator.  -->
+
+
+The following examples illustrate two random samples and their estimators:

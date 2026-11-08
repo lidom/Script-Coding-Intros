@@ -1,7 +1,7 @@
-<!-- LTeX: language=en-US -->
 ---
 jupyter: python3
 ---
+<!-- LTeX: language=en-US -->
 
 # Some Notes on Useful Packages
 

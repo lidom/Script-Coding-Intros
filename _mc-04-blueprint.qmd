@@ -1,0 +1,14 @@
+<!-- LTeX: language=en-US -->
+### Blueprint: Designing Your Own Simulation
+
+::: {.spaced-list}
+1. **Define the estimator and the questions.** Which estimator (or test, or interval)? Which properties (bias, variance, MSE, coverage, rejection rates)? What does theory already tell you?
+
+2. **Choose the design.** Which distributions $F_X$ (include cases where the assumptions are stressed, e.g., skewness or heavy tails)? Which sample sizes $n$? Which number of replications $B$? Fix a seed for the (pseudo) random number generator(s).
+
+3. **Write the code.** Write a function for *one* replication (simulate data, compute estimate), repeat it $B$ times for each design, and store the results in a data frame.
+
+4. **Present the results.** Use tables for exact numbers and figures for patterns across $n$ and $F_X$. Always show the target value (e.g., $\mu$, $\sigma^2/n$, or $1-\alpha$) for comparison.
+
+5. **Interpret the results.** Answer each question from Step 1, and account for Monte Carlo error before drawing conclusions.
+:::

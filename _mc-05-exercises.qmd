@@ -1,0 +1,34 @@
+<!-- LTeX: language=en-US -->
+## Exercises VI
+
+Use the blueprint above for both exercises.
+
+**Exercise 1:**
+
+Suppose $X \sim \mathcal{U}[0, 2]$, where $\mathcal{U}[0, 2]$ denotes the uniform distribution on the interval $[0, 2]$. It is easy to show (make sure to verify this!) that $E(X) = 1$. Now repeat the following two steps at least $1{,}000$ times:
+
+1. Draw a random sample of size $n = 20$ from the distribution of $X$.
+2. Compute the sample mean and a $95\%$ confidence interval for $E(X)$ from this sample.
+
+You now have $1{,}000$ sample means and $1{,}000$ confidence intervals. Use them to answer the following questions:
+
+a. What is the average of your $1{,}000$ sample means?
+
+b. What is the standard deviation of your $1{,}000$ sample means?
+
+c. How often does the $95\%$ confidence interval contain $E(X)$?
+
+
+**Exercise 2:**
+
+In this exercise, we use the Monte Carlo method to approximate the number $\pi$. Randomly draw $n$ points from a square and count how many of them lie inside the square's incircle. Based on this count and the formula for the area of a circle, compute an approximation of $\pi$.
+
+<!-- **Exercise 3:**
+
+Using your code from Exercise 2, write a function that receives a sample size n as its argument and returns an approximation of pi using that sample size.
+Then for each of the following sample sizes $n \in \{10, 100, 1000, 10000\}$ calculate 10000 approximations of pi and calculate the respective means and standard deviations.
+Create a plot that portrays your findings in an intuitive manner, such as histograms, density plots, boxplots, etc. -->
+
+<!-- **Exercise 4**
+
+Try to explain in plain English, how the Monte-Carlo method works, what it can and cannot do. -->

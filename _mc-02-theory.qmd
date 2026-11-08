@@ -1,0 +1,261 @@
+<!-- LTeX: language=en-US -->
+### Bias, Variance, and Consistency of Estimators
+
+Since an estimator is a random variable, it has a distribution and, typically, a mean and a variance. We use them to assess the quality of an estimator.
+
+::: {.callout icon=false}
+##
+::: {#def-bias-var-mse}
+## Bias, Variance, Standard Error, and Mean Squared Error of $\hat\theta_n$
+
+::: {.spaced-list}
+* The **bias** of $\hat\theta_n$ is
+$$
+\operatorname{Bias}\left(\hat\theta_n\right) = E\left(\hat\theta_n\right) - \theta.
+$$
+
+* The **variance** and the **standard error** of $\hat\theta_n$ are
+$$
+\operatorname{Var}\left(\hat\theta_n\right) = E\left(\left(\hat\theta_n - E\left(\hat\theta_n\right)\right)^2\right)
+\quad\text{and}\quad
+\operatorname{SE}\left(\hat\theta_n\right) = \sqrt{\operatorname{Var}\left(\hat\theta_n\right)}.
+$$
+
+* The **mean squared error** of $\hat\theta_n$ combines bias and variance,
+$$
+\operatorname{MSE}\left(\hat\theta_n\right) = E\left(\left(\hat\theta_n - \theta\right)^2\right) = \left(\operatorname{Bias}\left(\hat\theta_n\right)\right)^2 + \operatorname{Var}\left(\hat\theta_n\right).
+$$
+:::
+:::
+:::
+
+**Bias.** An estimator is called **unbiased** if
+$$
+\operatorname{Bias}\left(\hat\theta_n\right) = 0 \quad\text{for all}\quad n.
+$$
+That is, averaged over *all* hypothetical data sets, the estimator equals $\theta$. Unbiasedness holds for every fixed $n$; it is a **small-sample property**. Many estimators, however, are biased for fixed $n$. Then, we want them to be at least **asymptotically unbiased**,
+$$
+\operatorname{Bias}\left(\hat\theta_n\right) \to 0 \quad\text{as}\quad n \to \infty.
+$$
+
+**Variance.** (Asymptotic) unbiasedness alone does not guarantee that the realizations of $\hat\theta_n$ are close to $\theta$: if $\operatorname{Var}(\hat\theta_n)$ is large, the realizations scatter widely around their mean, even in large samples. Therefore, we also want estimators to be **consistent**.
+
+::: {.callout icon=false}
+##
+::: {#def-consistency}
+## Consistency of $\hat\theta_n$
+
+An estimator $\hat\theta_n$ is called **(weakly) consistent** if, for any (arbitrarily small) $\varepsilon > 0$,
+$$
+P\left(\left|\hat{\theta}_n - \theta\right| > \varepsilon\right) \rightarrow 0 \quad\text{as}\quad n \to \infty.
+$$
+In short, we write
+$$
+\hat{\theta}_n \rightarrow_P \theta \quad\text{as}\quad n \to \infty.
+$$
+:::
+:::
+
+That is, the realizations of a consistent estimator concentrate around $\theta$ as the sample size grows.
+
+A convenient way to check consistency is to verify that both the bias and the variance vanish,
+$$
+\operatorname{Bias}\left(\hat\theta_n\right) \to 0
+\quad\text{and}\quad
+\operatorname{Var}\left(\hat\theta_n\right) \to 0
+\quad\text{as}\quad n \to \infty,
+$$
+or, equivalently, that $\operatorname{MSE}(\hat\theta_n) \to 0$. This condition is sufficient (but not necessary) for consistency; see the box below for a proof.
+
+::: {.callout-tip collapse="true"}
+## 🤓 Nerd's Box: A Sufficient Condition for Consistency
+
+An estimator $\hat\theta_n$ with
+$$
+\operatorname{Bias}\left(\hat\theta_n\right) \to 0 \quad\text{and}\quad \operatorname{Var}\left(\hat\theta_n\right) \to 0 \quad\text{as}\quad n \to \infty
+$$
+is (weakly) consistent.
+
+**Proof.** We use **Chebyshev's inequality**: for any random variable $Z$ with finite variance and any $c > 0$,
+$$
+P\left(\left|Z - E(Z)\right| > c\right) \leq \frac{\operatorname{Var}(Z)}{c^2}.
+$$
+
+Let $\varepsilon > 0$. Adding a zero, $0 = -E(\hat\theta_n) + E(\hat\theta_n)$, and applying the triangle inequality, $|a + b| \leq |a| + |b|$, yields
+$$
+\left|\hat\theta_n - \theta\right|
+\leq \left|\hat\theta_n - E\left(\hat\theta_n\right)\right| + \left|\operatorname{Bias}\left(\hat\theta_n\right)\right|.
+$$
+
+Since $\operatorname{Bias}(\hat\theta_n) \to 0$, there is an $n_0$ such that $|\operatorname{Bias}(\hat\theta_n)| \leq \varepsilon/2$ for all $n \geq n_0$. Thus, for all $n \geq n_0$, the event $|\hat\theta_n - \theta| > \varepsilon$ implies $|\hat\theta_n - E(\hat\theta_n)| > \varepsilon/2$, i.e.,
+$$
+\left\{\left|\hat\theta_n - \theta\right| > \varepsilon\right\} \subseteq \left\{\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| > \frac{\varepsilon}{2}\right\}.
+$$
+
+Applying Chebyshev's inequality with $Z = \hat\theta_n$ and $c = \varepsilon/2$ yields
+$$
+P\left(\left|\hat\theta_n - \theta\right| > \varepsilon\right)
+\leq P\left(\left|\hat\theta_n - E\left(\hat\theta_n\right)\right| > \frac{\varepsilon}{2}\right)
+\leq \frac{4 \operatorname{Var}\left(\hat\theta_n\right)}{\varepsilon^2}
+\to 0 \quad\text{as}\quad n \to \infty. \quad \square
+$$
+:::
+
+
+### Asymptotic Normality and Confidence Intervals
+
+(Asymptotic) unbiasedness and consistency are minimum requirements for any estimator. For hypothesis tests and confidence intervals, however, we need more: the **distribution** of $\hat\theta_n$.
+
+**Problem:** The distribution of $\hat\theta_n = \hat\theta(X_1, \ldots, X_n)$ depends on the distribution $F_X$ of the random sample, which is typically unknown.
+
+**Solution:** Many estimators are **asymptotically normal**, which usually follows from a **Central Limit Theorem (CLT)**:
+$$
+\sqrt{n}\left(\hat{\theta}_n - \theta\right) \rightarrow_D \mathcal{N}\left(0, \operatorname{AVar}\left(\hat{\theta}_n\right)\right) \quad\text{as}\quad n \to \infty.
+$$
+Equivalently, for large $n$,
+$$
+\hat{\theta}_n \overset{a}{\sim} \mathcal{N}\left(\theta, \frac{1}{n}\operatorname{AVar}\left(\hat{\theta}_n\right)\right).
+$$
+Here, the **asymptotic variance** of $\hat{\theta}_n$ is (using $\operatorname{Var}(aZ + b) = a^2 \operatorname{Var}(Z)$ for constants $a, b$)
+$$
+\operatorname{AVar}\left(\hat{\theta}_n\right)
+= \lim_{n\to\infty} \operatorname{Var}\left(\sqrt{n}\left(\hat{\theta}_n - \theta\right)\right)
+= \lim_{n\to\infty} n \operatorname{Var}\left(\hat{\theta}_n\right).
+$$
+
+::: {.spaced-list}
+* **Why scale by $\sqrt{n}$?** For a consistent estimator, $\operatorname{Var}(\hat\theta_n) \to 0$. To obtain a non-degenerate limit distribution, we must scale appropriately. For most parametric estimators, the correct scaling factor is $\sqrt{n}$.
+
+* **Interpretation:** The estimator, centered by $\theta$ and scaled by $\sqrt{n}$, is approximately normally distributed for large $n$.
+:::
+
+Such results hold only in the limit and are called **large-sample properties**. They allow us to test hypotheses and to construct confidence intervals. Let $\widehat{\operatorname{AVar}}(\hat\theta_n)$ be a consistent estimator of $\operatorname{AVar}(\hat\theta_n)$, and let $\alpha \in (0, 1)$ be the significance level. Define the interval
+$$
+\operatorname{CI}^{1-\alpha}_n = \left[\hat{\theta}_n - z_{1-\alpha/2}\sqrt{\frac{\widehat{\operatorname{AVar}}\left(\hat\theta_n\right)}{n}},\; \hat{\theta}_n + z_{1-\alpha/2}\sqrt{\frac{\widehat{\operatorname{AVar}}\left(\hat\theta_n\right)}{n}}\right],
+$$
+where
+$$
+z_{1-\alpha/2} = \Phi^{-1}\left(1 - \frac{\alpha}{2}\right)
+$$
+denotes the $(1-\alpha/2)$-quantile of the standard normal distribution, and $\Phi$ denotes the standard normal distribution function. Then
+$$
+P\left(\theta \in \operatorname{CI}^{1-\alpha}_n\right) \rightarrow 1 - \alpha \quad\text{as}\quad n \to \infty,
+$$
+so $\operatorname{CI}^{1-\alpha}_n$ is an (asymptotic) $(1-\alpha)\cdot 100\%$ **confidence interval** for $\theta$. For example, $\alpha = 0.05$ yields $z_{0.975} \approx 1.96$ and a $95\%$ confidence interval.
+
+::: {.spaced-list}
+* **Interpretation:** Across all hypothetical data sets, $(1-\alpha)\cdot 100\%$ of the intervals contain $\theta$. The interval changes from data set to data set; the parameter $\theta$ does not.
+
+* **Caveat:** The $(1-\alpha)\cdot 100\%$ coverage holds only in the limit. For a fixed sample size $n$, the **actual coverage probability** $P(\theta \in \operatorname{CI}^{1-\alpha}_n)$ can differ considerably from $1-\alpha$: it can be smaller (**under-coverage**) or larger (**over-coverage**). In applications, the actual coverage probability is typically unknown.
+:::
+
+
+### Why Monte Carlo Simulations?
+
+In practice, we always work with a **fixed** sample size $n$. We therefore want to know the small-sample properties of $\hat\theta_n$ for this $n$, e.g.,
+
+::: {.spaced-list}
+* the bias $\operatorname{Bias}(\hat\theta_n)$,
+
+* the variance $\operatorname{Var}(\hat\theta_n)$ and the standard error $\operatorname{SE}(\hat\theta_n)$,
+
+* the mean squared error $\operatorname{MSE}(\hat\theta_n)$, and
+
+* the actual coverage probability $P(\theta \in \operatorname{CI}^{1-\alpha}_n)$.
+:::
+
+**Problem:** All of these depend on the distribution of $\hat\theta_n$ for the given $n$, which is typically unknown. There are three ways to derive or approximate it:
+
+::: {.spaced-list}
+1. **Exact derivation** under a *complete* assumption on $F_X$. For example, if $X_i \overset{\text{i.i.d.}}{\sim} \mathcal{N}(\mu, \sigma^2)$, then $\bar X_n \sim \mathcal{N}(\mu, \sigma^2/n)$ for every $n$.
+   * Pro: exact for every $n$.
+   * Con: feasible only for simple estimators and distributions; the derivations are often cumbersome; wrong if the assumption on $F_X$ is wrong.
+
+2. **Asymptotic approximation** under *weak* assumptions on $F_X$ (e.g., i.i.d. with finite variance), as in the previous section.
+   * Pro: requires only weak assumptions on $F_X$.
+   * Con: exact only as $n \to \infty$; can be poor for small $n$.
+
+3. **Monte Carlo simulation** under a *complete* assumption on $F_X$.
+   * Pro: approximates the exact distribution of $\hat\theta_n$ with arbitrary precision for basically any $F_X$, any estimator, and any $n$; no derivations needed.
+   * Con: the results hold only for the chosen $F_X$.
+:::
+
+In particular, Monte Carlo simulations let us check whether the asymptotic results of Option 2 are reliable for the sample sizes we face in practice.
+
+#### **How Do Monte Carlo Simulations Work?** {-}
+
+**Idea:** Bias, variance, MSE, and coverage probability are all **expectations**, e.g.,
+$$
+\operatorname{MSE}\left(\hat\theta_n\right) = E\left(\left(\hat\theta_n - \theta\right)^2\right)
+$$
+and
+$$
+P\left(\theta \in \operatorname{CI}^{1-\alpha}_n\right) = E\left(\mathbf{1}\left(\theta \in \operatorname{CI}^{1-\alpha}_n\right)\right),
+$$
+where $\mathbf{1}(\cdot)$ denotes the indicator function. By the **law of large numbers**, we can approximate expectations by **sample means** over many independent realizations, and a computer can generate as many realizations as we want.
+
+
+::: {.callout-note icon=false}
+## Monte Carlo Simulation Algorithm
+
+Choose a distribution $F_X$, a sample size $n$, and a large number of Monte Carlo replications $B$ (e.g., $B = 10{,}000$). For each $b = 1, \dots, B$:
+
+::: {.spaced-list}
+1. **Simulate data:** Draw a realization of the random sample from $F_X$ using a (pseudo-)random number generator,
+$$
+\left\{X_{1,b}, \ldots, X_{n,b}\right\}.
+$$
+
+2. **Compute the estimate:** Compute the corresponding realization of the estimator (and, if needed, of the confidence interval $\operatorname{CI}^{1-\alpha}_{n,b}$ or a test statistic),
+$$
+\hat\theta_{n,b} = \hat\theta\left(X_{1,b}, \ldots, X_{n,b}\right).
+$$
+:::
+
+This yields $B$ independent realizations $\hat\theta_{n,1}, \ldots, \hat\theta_{n,B}$ of the estimator.
+:::
+
+From these $B$ realizations, we compute the **Monte Carlo approximations**:
+
+::: {.spaced-list}
+* **Bias:**
+$$
+\widehat{\operatorname{Bias}}_{\operatorname{MC}}\left(\hat\theta_n\right) = \bar\theta_{n,B} - \theta,
+\quad\text{where}\quad
+\bar\theta_{n,B} = \frac{1}{B}\sum_{b=1}^B \hat\theta_{n,b}.
+$$
+
+* **Variance:**
+$$
+\widehat{\operatorname{Var}}_{\operatorname{MC}}\left(\hat\theta_n\right) = \frac{1}{B}\sum_{b=1}^B \left(\hat\theta_{n,b} - \bar\theta_{n,B}\right)^2.
+$$
+
+* **Mean squared error:**
+$$
+\widehat{\operatorname{MSE}}_{\operatorname{MC}}\left(\hat\theta_n\right) = \frac{1}{B}\sum_{b=1}^B \left(\hat\theta_{n,b} - \theta\right)^2.
+$$
+
+* **Coverage probability** (the share of simulated intervals that contain $\theta$):
+$$
+\widehat{P}_{\operatorname{MC}}\left(\theta \in \operatorname{CI}^{1-\alpha}_n\right) = \frac{1}{B}\sum_{b=1}^B \mathbf{1}\left(\theta \in \operatorname{CI}^{1-\alpha}_{n,b}\right).
+$$
+:::
+
+By the law of large numbers, these approximations become arbitrarily precise as $B \to \infty$, e.g.,
+$$
+\widehat{\operatorname{MSE}}_{\operatorname{MC}}\left(\hat\theta_n\right) \rightarrow_P \operatorname{MSE}\left(\hat\theta_n\right) \quad\text{as}\quad B \to \infty.
+$$
+Likewise, the empirical distribution function of $\hat\theta_{n,1}, \ldots, \hat\theta_{n,B}$ approximates the entire distribution function of $\hat\theta_n$ as $B \to \infty$ (Glivenko–Cantelli theorem).
+
+::: {.callout-tip icon=false}
+## Two Different "Sample Sizes"
+
+::: {.spaced-list}
+* $n$ is the sample size of **one** data set. It is part of the setup we investigate: $\operatorname{Bias}(\hat\theta_n)$, $\operatorname{Var}(\hat\theta_n)$, etc. depend on it.
+
+* $B$ is the number of **simulated** data sets. It controls only the precision of the Monte Carlo approximations and should be as large as computationally feasible.
+:::
+:::
+
+⚠️ Monte Carlo results hold only for the chosen $F_X$ and $n$. Therefore, we typically repeat the simulation for several distributions $F_X$ (e.g., normal, skewed, heavy-tailed) and several sample sizes $n$ (small, intermediate, and large).
+
